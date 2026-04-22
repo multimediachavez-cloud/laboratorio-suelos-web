@@ -1,0 +1,56 @@
+<svg width="320" height="280" viewBox="0 0 320 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cpgBlueTop" x1="32" y1="80" x2="288" y2="152" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7986E8"/>
+      <stop offset="1" stop-color="#3D4796"/>
+    </linearGradient>
+    <linearGradient id="cpgBlueLeft" x1="64" y1="144" x2="160" y2="252" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5A67C2"/>
+      <stop offset="1" stop-color="#2A316D"/>
+    </linearGradient>
+    <linearGradient id="cpgBlueRight" x1="160" y1="144" x2="256" y2="252" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4855B2"/>
+      <stop offset="1" stop-color="#252D63"/>
+    </linearGradient>
+    <linearGradient id="cpgOrangeTop" x1="96" y1="44" x2="224" y2="96" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFA148"/>
+      <stop offset="1" stop-color="#E96E18"/>
+    </linearGradient>
+    <linearGradient id="cpgOrangeLeft" x1="96" y1="70" x2="160" y2="152" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F58B2F"/>
+      <stop offset="1" stop-color="#D76216"/>
+    </linearGradient>
+    <linearGradient id="cpgOrangeRight" x1="160" y1="70" x2="224" y2="152" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EE8126"/>
+      <stop offset="1" stop-color="#C95513"/>
+    </linearGradient>
+    <filter id="cpgShadow" x="0" y="12" width="320" height="268" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="10"/>
+      <feGaussianBlur stdDeviation="12"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.0666667 0 0 0 0 0.0862745 0 0 0 0 0.219608 0 0 0 0.2 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_1" result="shape"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#cpgShadow)">
+    <ellipse cx="160" cy="236" rx="112" ry="18" fill="#151B45" fill-opacity="0.18"/>
+
+    <path d="M160 80L288 116L160 152L32 116L160 80Z" fill="url(#cpgBlueTop)"/>
+    <path d="M64 144L160 172V252L64 224V144Z" fill="url(#cpgBlueLeft)"/>
+    <path d="M256 144L160 172V252L256 224V144Z" fill="url(#cpgBlueRight)"/>
+    <path d="M160 152L256 124V144L160 172L64 144V124L160 152Z" fill="#5663C8" fill-opacity="0.65"/>
+
+    <path d="M160 44L224 70L160 96L96 70L160 44Z" fill="url(#cpgOrangeTop)"/>
+    <path d="M96 70L160 96V152L96 126V70Z" fill="url(#cpgOrangeLeft)"/>
+    <path d="M224 70L160 96V152L224 126V70Z" fill="url(#cpgOrangeRight)"/>
+
+    <path d="M96 70L160 96L224 70" stroke="white" stroke-opacity="0.16" stroke-width="4" stroke-linecap="round"/>
+    <path d="M160 44L224 70" stroke="white" stroke-opacity="0.12" stroke-width="4" stroke-linecap="round"/>
+    <path d="M160 44L96 70" stroke="white" stroke-opacity="0.22" stroke-width="4" stroke-linecap="round"/>
+    <path d="M160 80L288 116" stroke="white" stroke-opacity="0.12" stroke-width="4" stroke-linecap="round"/>
+    <path d="M160 80L32 116" stroke="white" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>
