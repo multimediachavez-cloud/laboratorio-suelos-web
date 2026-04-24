@@ -15,6 +15,22 @@ if (yearTarget) {
   yearTarget.textContent = new Date().getFullYear();
 }
 
+if (hero) {
+  hero.classList.add("hero--primed");
+
+  const enterHero = () => {
+    window.requestAnimationFrame(() => {
+      hero.classList.add("hero--entered");
+    });
+  };
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    hero.classList.add("hero--entered");
+  } else {
+    enterHero();
+  }
+}
+
 const closeNav = () => {
   if (!nav || !navToggle) {
     return;
