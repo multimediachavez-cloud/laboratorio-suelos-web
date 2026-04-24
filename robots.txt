@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://multimediachavez-cloud.github.io/laboratorio-suelos-web/sitemap.xml
