@@ -124,7 +124,7 @@ if (contactForm) {
     const servicio = formData.get("servicio") || "";
     const mensaje = formData.get("mensaje") || "";
 
-    const whatsappNumber = "51975457825";
+    const whatsappNumber = "51920493433";
     const text = [
       "Hola, quiero solicitar información.",
       `Nombre: ${nombre}`,

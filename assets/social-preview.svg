@@ -1,0 +1,82 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="108" y1="44" x2="1054" y2="618" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#191F57"/>
+      <stop offset="0.56" stop-color="#273485"/>
+      <stop offset="1" stop-color="#0F163F"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(188 124) rotate(46.8) scale(210.994 192.74)">
+      <stop stop-color="#F28526" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#F28526" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1008 124) rotate(129.442) scale(250.615 230.674)">
+      <stop stop-color="#6677F2" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#6677F2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="92" y1="78" x2="1110" y2="548" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.04"/>
+    </linearGradient>
+    <filter id="shadow" x="112" y="170" width="215" height="215" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="16"/>
+      <feGaussianBlur stdDeviation="14"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.027451 0 0 0 0 0.0352941 0 0 0 0 0.113725 0 0 0 0.34 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="#111742"/>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="188" cy="124" r="210" fill="url(#glow1)"/>
+  <circle cx="1008" cy="124" r="250" fill="url(#glow2)"/>
+
+  <rect x="66" y="30" width="1068" height="477" rx="38" fill="url(#panel)" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <rect x="66.5" y="30.5" width="1067" height="476" rx="37.5" stroke="#FFFFFF" stroke-opacity="0.05"/>
+
+  <rect x="104" y="62" width="316" height="413" rx="34" fill="#FFFFFF" fill-opacity="0.05" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <rect x="104.5" y="62.5" width="315" height="412" rx="33.5" stroke="#FFFFFF" stroke-opacity="0.05"/>
+
+  <g filter="url(#shadow)">
+    <image href="logo-cpg.svg" x="164" y="188" width="196" height="196"/>
+  </g>
+
+  <rect x="170" y="335" width="196" height="38" rx="19" fill="#F28526" fill-opacity="0.16"/>
+  <text x="268" y="360" fill="#FFD7B4" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="800" letter-spacing="1.4" text-anchor="middle">RUC 206015193390</text>
+
+  <rect x="452" y="64" width="398" height="34" rx="17" fill="#FFFFFF" fill-opacity="0.08"/>
+  <text x="651" y="87" fill="#D6DCFF" font-size="14" font-family="Segoe UI, Arial, sans-serif" font-weight="700" letter-spacing="1.6" text-anchor="middle">INGENIERÍA | SUELOS | PAVIMENTOS | ASFALTOS</text>
+
+  <text fill="white" font-size="56" font-family="Segoe UI, Arial, sans-serif" font-weight="800" letter-spacing="-1.8">
+    <tspan x="452" y="158">Corporación Puerta Grande</tspan>
+    <tspan x="452" y="214">E.I.R.L.</tspan>
+  </text>
+
+  <text fill="#FFFFFF" fill-opacity="0.84" font-size="22" font-family="Segoe UI, Arial, sans-serif" font-weight="600">
+    <tspan x="452" y="270">Ensayos de laboratorio y control de calidad para obras viales,</tspan>
+    <tspan x="452" y="304">edificaciones y saneamiento con atención técnica y comercial rápida.</tspan>
+  </text>
+
+  <rect x="452" y="330" width="236" height="38" rx="19" fill="#FFFFFF" fill-opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <rect x="700" y="330" width="274" height="38" rx="19" fill="#FFFFFF" fill-opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <rect x="452" y="380" width="244" height="38" rx="19" fill="#FFFFFF" fill-opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.08"/>
+
+  <text x="570" y="355" fill="white" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle">LABORATORIO DE SUELOS</text>
+  <text x="837" y="355" fill="white" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle">CONCRETO Y AGREGADOS</text>
+  <text x="574" y="405" fill="white" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="800" text-anchor="middle">CONTROL DE PAVIMENTOS</text>
+
+  <line x1="452" y1="451" x2="1098" y2="451" stroke="#FFFFFF" stroke-opacity="0.10"/>
+
+  <text fill="#FFFFFF" fill-opacity="0.84" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="700">
+    <tspan x="452" y="490">WhatsApp: 920 493 433</tspan>
+    <tspan x="452" y="528">cpgsuelosypavimentos@gmail.com</tspan>
+  </text>
+
+  <text fill="#FFD5AA" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="800">
+    <tspan x="842" y="490">multimediachavez-cloud.github.io/</tspan>
+    <tspan x="842" y="516">laboratorio-suelos-web</tspan>
+  </text>
+</svg>

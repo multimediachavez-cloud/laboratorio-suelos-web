@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resumen de Avances Abril 2026 | Corporación Puerta Grande E.I.R.L.</title>
+  <style>
+    :root {
+      color-scheme: only light;
+      --navy: #10153d;
+      --navy-soft: #2a358f;
+      --orange: #f28526;
+      --sand: #f4efe7;
+      --line: #d8ddf6;
+      --text: #18204f;
+      --soft: #58628d;
+      --white: #ffffff;
+    }
+
+    @page {
+      size: A4;
+      margin: 14mm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background: var(--sand);
+    }
+
+    .sheet {
+      background: var(--white);
+      border-radius: 28px;
+      border: 1px solid #e8ebfb;
+      box-shadow: 0 12px 30px rgba(16, 21, 61, 0.08);
+      overflow: hidden;
+    }
+
+    .hero {
+      padding: 30px 34px 26px;
+      background:
+        radial-gradient(circle at top right, rgba(242, 133, 38, 0.18), transparent 22%),
+        linear-gradient(160deg, #0d1237, #253187 62%, #151d54);
+      color: var(--white);
+    }
+
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .brand img {
+      width: 92px;
+      height: auto;
+      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.24));
+    }
+
+    .brand-copy h1 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-copy p {
+      margin: 8px 0 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 14px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero h2 {
+      margin: 24px 0 8px;
+      font-size: 25px;
+      line-height: 1.2;
+    }
+
+    .hero p.hero-lead {
+      margin: 0;
+      max-width: 720px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      padding: 24px 34px 10px;
+      background: linear-gradient(180deg, rgba(247, 249, 255, 0.9), rgba(255, 255, 255, 0.96));
+      border-bottom: 1px solid var(--line);
+    }
+
+    .summary-card {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: #f7f9ff;
+      border: 1px solid var(--line);
+    }
+
+    .summary-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--navy);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .summary-card span {
+      font-size: 14px;
+      line-height: 1.45;
+      color: var(--soft);
+      font-weight: 600;
+    }
+
+    .content {
+      padding: 26px 34px 30px;
+    }
+
+    .content h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 22px;
+    }
+
+    .content > p {
+      margin: 0 0 18px;
+      color: var(--soft);
+      line-height: 1.55;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .entry {
+      padding: 18px 20px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(247, 249, 255, 0.92));
+    }
+
+    .entry-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .entry-top strong {
+      color: var(--orange);
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .entry-top span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(42, 53, 143, 0.08);
+      color: var(--navy-soft);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .entry h4 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .entry p {
+      margin: 0 0 10px;
+      color: var(--soft);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .entry ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .entry li + li {
+      margin-top: 8px;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      padding: 18px 34px 26px;
+      border-top: 1px solid var(--line);
+      background: #fbfcff;
+      color: var(--soft);
+      font-size: 13px;
+    }
+
+    @media print {
+      body {
+        background: transparent;
+      }
+
+      .sheet {
+        border: 0;
+        box-shadow: none;
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <section class="hero">
+      <div class="hero-top">
+        <div class="brand">
+          <img src="assets/logo-cpg.svg" alt="Logo de Corporación Puerta Grande E.I.R.L.">
+          <div class="brand-copy">
+            <h1>Corporación Puerta Grande E.I.R.L.</h1>
+            <p>Ingeniería | Suelos | Pavimentos | Asfaltos | Ensayos de laboratorio y control de calidad</p>
+          </div>
+        </div>
+        <span class="tag">Resumen técnico</span>
+      </div>
+
+      <h2>Avances de campo y laboratorio registrados del 17 al 23 de abril de 2026</h2>
+      <p class="hero-lead">Documento ejecutivo preparado para compartir evidencia reciente de seguimiento técnico, verificación de cantera, control de cunetas, muestreo y ensayos sobre base y sub-base granular.</p>
+    </section>
+
+    <section class="summary">
+      <article class="summary-card">
+        <strong>Proyecto</strong>
+        <span>Saldo de obra mejoramiento del camino vecinal Cruce Chacato - La Pauca</span>
+      </article>
+      <article class="summary-card">
+        <strong>Ubicación</strong>
+        <span>La Pauca, distrito de Pulán, Santa Cruz, Cajamarca</span>
+      </article>
+      <article class="summary-card">
+        <strong>Técnico encargado</strong>
+        <span>Walter Antonio Vallejos Antón</span>
+      </article>
+      <article class="summary-card">
+        <strong>Contacto principal</strong>
+        <span>WhatsApp 920 493 433 · cpgsuelosypavimentos@gmail.com</span>
+      </article>
+    </section>
+
+    <section class="content">
+      <h3>Bitácora resumida</h3>
+      <p>La siguiente síntesis organiza las actividades recientes observadas en obra y laboratorio para facilitar el envío de respaldo técnico a clientes, consorcios, supervisiones o entidades interesadas.</p>
+
+      <div class="timeline">
+        <article class="entry">
+          <div class="entry-top">
+            <strong>17/04/2026</strong>
+            <span>Campo</span>
+          </div>
+          <h4>Control de cunetas, cantera y muestreo para base granular</h4>
+          <p>CUI N° 2381061 · La Pauca, Pulán, Santa Cruz, Cajamarca.</p>
+          <ul>
+            <li>Moldeo de probetas en vaciado de concreto de cunetas en km 6+243 al 6+300 y km 6+360 al 6+379.</li>
+            <li>Verificación en cantera Chocoy 02 arenisca para base granular.</li>
+            <li>Muestreo de material para equivalente de arena en mezcla de base granular.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-top">
+            <strong>18/04/2026</strong>
+            <span>Campo</span>
+          </div>
+          <h4>Verificación de cantera y vaciado de cunetas</h4>
+          <p>Seguimiento en frente de obra con control de concreto y curado.</p>
+          <ul>
+            <li>Verificación en cantera Chocoy 02 arenisca para base granular.</li>
+            <li>Verificación del vaciado en cunetas del km 6+485 al 6+510.</li>
+            <li>Desmoldeo de probetas y colocación en agua para curado y rotura.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-top">
+            <strong>20/04/2026</strong>
+            <span>Campo</span>
+          </div>
+          <h4>Moldeo de probetas y muestreo de sub-base en acopio</h4>
+          <p>Centro de acopio km 10+600.</p>
+          <ul>
+            <li>Moldeo de probetas en vaciado de concreto de cunetas en el tramo reportado.</li>
+            <li>Muestreo de sub-base y base granular para ensayos respectivos.</li>
+            <li>Curado y secado de material de sub-base.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-top">
+            <strong>21/04/2026</strong>
+            <span>Campo</span>
+          </div>
+          <h4>Control de vaciado y cantera en frente vial</h4>
+          <p>Seguimiento a cunetas y control de producción.</p>
+          <ul>
+            <li>Moldeo de probetas en vaciado de cunetas del km 4+847 al 4+890.</li>
+            <li>Verificación en cantera Chocoy 2 arenisca para base granular en producción.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-top">
+            <strong>22/04/2026</strong>
+            <span>Campo</span>
+          </div>
+          <h4>Verificación en producción de materiales</h4>
+          <p>Control en canteras Chocoy 01 y Chocoy 02.</p>
+          <ul>
+            <li>Verificación en producción de cantera Chocoy 01 mezcla sub-base A1.</li>
+            <li>Verificación en producción de cantera Chocoy 02 arenisca mezcla base granular.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-top">
+            <strong>23/04/2026</strong>
+            <span>Laboratorio</span>
+          </div>
+          <h4>Ensayos para base y sub-base granular</h4>
+          <p>Centro de acopio km 10+600.</p>
+          <ul>
+            <li>Granulometría, humedad natural y equivalente de arena para sub-base granular.</li>
+            <li>Granulometría, humedad natural y equivalente de arena para base granular.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Corporación Puerta Grande E.I.R.L. · Ingeniería | Suelos | Pavimentos | Asfaltos</span>
+      <span>GitHub Pages: multimediachavez-cloud.github.io/laboratorio-suelos-web</span>
+    </footer>
+  </main>
+</body>
+</html>
