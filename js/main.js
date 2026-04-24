@@ -2,6 +2,10 @@ const navToggle = document.querySelector("[data-nav-toggle]");
 const nav = document.querySelector("[data-nav]");
 const header = document.querySelector("[data-header]");
 const hero = document.querySelector(".hero");
+const navLinks = [...document.querySelectorAll(".nav__link[href^='#']")];
+const trackedSections = navLinks
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
 const revealElements = document.querySelectorAll("[data-reveal]");
 const counterElements = document.querySelectorAll("[data-counter]");
 const contactForm = document.querySelector("[data-contact-form]");
@@ -11,19 +15,69 @@ if (yearTarget) {
   yearTarget.textContent = new Date().getFullYear();
 }
 
+const closeNav = () => {
+  if (!nav || !navToggle) {
+    return;
+  }
+
+  nav.classList.remove("is-open");
+  navToggle.classList.remove("is-active");
+  navToggle.setAttribute("aria-expanded", "false");
+  document.body.classList.remove("nav-open");
+};
+
+const setActiveNavLink = (sectionId) => {
+  navLinks.forEach((link) => {
+    const isActive = link.getAttribute("href") === `#${sectionId}`;
+    link.classList.toggle("is-active", isActive);
+
+    if (isActive) {
+      link.setAttribute("aria-current", "page");
+      return;
+    }
+
+    link.removeAttribute("aria-current");
+  });
+};
+
+const updateActiveNavLink = () => {
+  if (trackedSections.length === 0) {
+    return;
+  }
+
+  const headerHeight = header ? header.offsetHeight : 0;
+  const threshold = headerHeight + 56;
+  let activeSection = trackedSections[0];
+
+  trackedSections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+
+    if (rect.top - threshold <= 0) {
+      activeSection = section;
+    }
+  });
+
+  setActiveNavLink(activeSection.id);
+};
+
 if (navToggle && nav) {
   navToggle.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("is-open");
+    navToggle.classList.toggle("is-active", isOpen);
     navToggle.setAttribute("aria-expanded", String(isOpen));
     document.body.classList.toggle("nav-open", isOpen);
   });
 
   nav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      nav.classList.remove("is-open");
-      navToggle.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("nav-open");
+      closeNav();
     });
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeNav();
+    }
   });
 }
 
@@ -36,7 +90,12 @@ const updateHeaderState = () => {
 };
 
 updateHeaderState();
-window.addEventListener("scroll", updateHeaderState, { passive: true });
+updateActiveNavLink();
+window.addEventListener("scroll", () => {
+  updateHeaderState();
+  updateActiveNavLink();
+}, { passive: true });
+window.addEventListener("resize", updateActiveNavLink);
 
 if (hero && window.matchMedia("(pointer:fine)").matches) {
   hero.addEventListener("pointermove", (event) => {
