@@ -2,34 +2,129 @@ const navToggle = document.querySelector("[data-nav-toggle]");
 const nav = document.querySelector("[data-nav]");
 const header = document.querySelector("[data-header]");
 const hero = document.querySelector(".hero");
+const trustStrip = document.querySelector(".trust-strip");
 const navLinks = [...document.querySelectorAll(".nav__link[href^='#']")];
-const trackedSections = navLinks
-  .map((link) => document.querySelector(link.getAttribute("href")))
-  .filter(Boolean);
-const revealElements = document.querySelectorAll("[data-reveal]");
-const counterElements = document.querySelectorAll("[data-counter]");
+const hashLinks = [...document.querySelectorAll("a[href^='#']")].filter((link) => {
+  const href = link.getAttribute("href");
+  return Boolean(href && href.length > 1);
+});
+const toggleableSections = [...document.querySelectorAll("main > section[id]")];
+const toggleableElements = [trustStrip, ...toggleableSections].filter(Boolean);
+const sectionById = new Map(toggleableSections.map((section) => [section.id, section]));
+const revealElements = [...document.querySelectorAll("[data-reveal]")];
+const counterElements = [...document.querySelectorAll("[data-counter]")];
 const contactForm = document.querySelector("[data-contact-form]");
 const yearTarget = document.querySelector("[data-year]");
 
-if (yearTarget) {
-  yearTarget.textContent = new Date().getFullYear();
-}
+const defaultRouteId = "inicio";
+const hiddenSectionClass = "is-section-hidden";
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const supportsIntersectionObserver = "IntersectionObserver" in window;
 
-if (hero) {
-  hero.classList.add("hero--primed");
+const serviceSectionIds = [
+  "obras-publicas",
+  "servicios",
+  "detalle-laboratorio",
+  "detalle-calidad",
+  "detalle-geotecnia",
+  "detalle-implementacion",
+  "ensayos",
+  "proceso",
+  "cobertura",
+];
 
-  const enterHero = () => {
-    window.requestAnimationFrame(() => {
-      hero.classList.add("hero--entered");
-    });
-  };
+const routeMap = {
+  inicio: {
+    activeNav: "inicio",
+    visibleIds: ["inicio"],
+    includeTrustStrip: true,
+  },
+  nosotros: {
+    activeNav: "nosotros",
+    visibleIds: ["nosotros"],
+  },
+  servicios: {
+    activeNav: "servicios",
+    visibleIds: serviceSectionIds,
+  },
+  "obras-publicas": {
+    activeNav: "servicios",
+    visibleIds: serviceSectionIds,
+  },
+  "detalle-laboratorio": {
+    activeNav: "servicios",
+    visibleIds: serviceSectionIds,
+  },
+  "detalle-calidad": {
+    activeNav: "servicios",
+    visibleIds: serviceSectionIds,
+  },
+  "detalle-geotecnia": {
+    activeNav: "servicios",
+    visibleIds: serviceSectionIds,
+  },
+  "detalle-implementacion": {
+    activeNav: "servicios",
+    visibleIds: serviceSectionIds,
+  },
+  ensayos: {
+    activeNav: "servicios",
+    visibleIds: serviceSectionIds,
+  },
+  proceso: {
+    activeNav: "servicios",
+    visibleIds: serviceSectionIds,
+  },
+  cobertura: {
+    activeNav: "servicios",
+    visibleIds: serviceSectionIds,
+  },
+  proyectos: {
+    activeNav: "proyectos",
+    visibleIds: ["proyectos"],
+  },
+  clientes: {
+    activeNav: "proyectos",
+    visibleIds: ["clientes"],
+  },
+  documentos: {
+    activeNav: "proyectos",
+    visibleIds: ["documentos"],
+  },
+  reportes: {
+    activeNav: "proyectos",
+    visibleIds: ["reportes"],
+  },
+  galeria: {
+    activeNav: "proyectos",
+    visibleIds: ["galeria"],
+  },
+  contacto: {
+    activeNav: "contacto",
+    visibleIds: ["contacto"],
+  },
+};
 
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    hero.classList.add("hero--entered");
-  } else {
-    enterHero();
+let revealObserver;
+let counterObserver;
+
+const getSafeScrollBehavior = (behavior = "smooth") => {
+  if (prefersReducedMotion) {
+    return "auto";
   }
-}
+
+  return behavior;
+};
+
+const getHashId = (hashValue = "") => decodeURIComponent(hashValue.replace(/^#/, "")).trim();
+
+const resolveRoute = (hashValue = "") => {
+  const routeId = getHashId(hashValue) || defaultRouteId;
+  return {
+    requestedId: routeId,
+    route: routeMap[routeId] || routeMap[defaultRouteId],
+  };
+};
 
 const closeNav = () => {
   if (!nav || !navToggle) {
@@ -56,46 +151,92 @@ const setActiveNavLink = (sectionId) => {
   });
 };
 
-const updateActiveNavLink = () => {
-  if (trackedSections.length === 0) {
+const toggleRouteSections = (route) => {
+  const visibleElements = new Set(
+    route.visibleIds
+      .map((id) => sectionById.get(id))
+      .filter(Boolean),
+  );
+
+  if (route.includeTrustStrip && trustStrip) {
+    visibleElements.add(trustStrip);
+  }
+
+  toggleableElements.forEach((element) => {
+    element.classList.toggle(hiddenSectionClass, !visibleElements.has(element));
+  });
+};
+
+const refreshRevealObservers = () => {
+  const visibleRevealElements = revealElements.filter((element) => {
+    const parentSection = element.closest("section[id]");
+    const parentIsVisible = !parentSection || !parentSection.classList.contains(hiddenSectionClass);
+    const stripIsVisible = !trustStrip || !trustStrip.classList.contains(hiddenSectionClass);
+
+    if (trustStrip && trustStrip.contains(element)) {
+      return stripIsVisible;
+    }
+
+    return parentIsVisible;
+  });
+
+  if (revealObserver) {
+    visibleRevealElements.forEach((element) => {
+      if (!element.classList.contains("is-visible")) {
+        revealObserver.observe(element);
+      }
+    });
+  } else if (!supportsIntersectionObserver) {
+    visibleRevealElements.forEach((element) => element.classList.add("is-visible"));
+  }
+
+  if (counterObserver) {
+    counterElements.forEach((element) => {
+      const parentSection = element.closest("section[id]");
+
+      if (parentSection && parentSection.classList.contains(hiddenSectionClass)) {
+        return;
+      }
+
+      if (element.dataset.counted !== "true") {
+        counterObserver.observe(element);
+      }
+    });
+  }
+};
+
+const scrollToRouteTarget = (requestedId, route, behavior = "smooth") => {
+  const safeBehavior = getSafeScrollBehavior(behavior);
+  const fallbackId = route.visibleIds[0];
+  const targetId = sectionById.has(requestedId) ? requestedId : fallbackId;
+  const target = targetId === "inicio" ? hero : sectionById.get(targetId);
+
+  if (!target) {
+    window.scrollTo({ top: 0, behavior: safeBehavior });
     return;
   }
 
-  const headerHeight = header ? header.offsetHeight : 0;
-  const threshold = headerHeight + 56;
-  let activeSection = trackedSections[0];
+  if (target === hero) {
+    window.scrollTo({ top: 0, behavior: safeBehavior });
+    return;
+  }
 
-  trackedSections.forEach((section) => {
-    const rect = section.getBoundingClientRect();
-
-    if (rect.top - threshold <= 0) {
-      activeSection = section;
-    }
-  });
-
-  setActiveNavLink(activeSection.id);
+  const headerOffset = header ? header.offsetHeight + 18 : 0;
+  const targetTop = Math.max(target.getBoundingClientRect().top + window.scrollY - headerOffset, 0);
+  window.scrollTo({ top: targetTop, behavior: safeBehavior });
 };
 
-if (navToggle && nav) {
-  navToggle.addEventListener("click", () => {
-    const isOpen = nav.classList.toggle("is-open");
-    navToggle.classList.toggle("is-active", isOpen);
-    navToggle.setAttribute("aria-expanded", String(isOpen));
-    document.body.classList.toggle("nav-open", isOpen);
-  });
+const applyRoute = (hashValue, { behavior = "smooth" } = {}) => {
+  const { requestedId, route } = resolveRoute(hashValue);
+  toggleRouteSections(route);
+  setActiveNavLink(route.activeNav);
+  closeNav();
 
-  nav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      closeNav();
-    });
+  window.requestAnimationFrame(() => {
+    refreshRevealObservers();
+    scrollToRouteTarget(requestedId, route, behavior);
   });
-
-  window.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeNav();
-    }
-  });
-}
+};
 
 const updateHeaderState = () => {
   if (!header) {
@@ -105,13 +246,73 @@ const updateHeaderState = () => {
   header.classList.toggle("is-scrolled", window.scrollY > 12);
 };
 
+const navigateToHash = (hashId) => {
+  const normalizedHash = `#${hashId}`;
+
+  if (window.location.hash === normalizedHash || (!window.location.hash && hashId === defaultRouteId)) {
+    applyRoute(normalizedHash, { behavior: "smooth" });
+    return;
+  }
+
+  window.location.hash = hashId;
+};
+
+if (yearTarget) {
+  yearTarget.textContent = new Date().getFullYear();
+}
+
+if (hero) {
+  hero.classList.add("hero--primed");
+
+  const enterHero = () => {
+    window.requestAnimationFrame(() => {
+      hero.classList.add("hero--entered");
+    });
+  };
+
+  if (prefersReducedMotion) {
+    hero.classList.add("hero--entered");
+  } else {
+    enterHero();
+  }
+}
+
+if (navToggle && nav) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("is-open");
+    navToggle.classList.toggle("is-active", isOpen);
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+    document.body.classList.toggle("nav-open", isOpen);
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeNav();
+    }
+  });
+}
+
+hashLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const hashId = getHashId(link.getAttribute("href") || "");
+
+    if (!hashId || (!routeMap[hashId] && !sectionById.has(hashId))) {
+      return;
+    }
+
+    event.preventDefault();
+    navigateToHash(hashId);
+  });
+});
+
 updateHeaderState();
-updateActiveNavLink();
-window.addEventListener("scroll", () => {
-  updateHeaderState();
-  updateActiveNavLink();
-}, { passive: true });
-window.addEventListener("resize", updateActiveNavLink);
+applyRoute(window.location.hash, { behavior: "auto" });
+
+window.addEventListener("hashchange", () => {
+  applyRoute(window.location.hash, { behavior: "smooth" });
+});
+
+window.addEventListener("scroll", updateHeaderState, { passive: true });
 
 if (hero && window.matchMedia("(pointer:fine)").matches) {
   hero.addEventListener("pointermove", (event) => {
@@ -124,8 +325,8 @@ if (hero && window.matchMedia("(pointer:fine)").matches) {
   });
 }
 
-if ("IntersectionObserver" in window && revealElements.length > 0) {
-  const observer = new IntersectionObserver((entries, currentObserver) => {
+if (supportsIntersectionObserver && revealElements.length > 0) {
+  revealObserver = new IntersectionObserver((entries, currentObserver) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) {
         return;
@@ -138,7 +339,7 @@ if ("IntersectionObserver" in window && revealElements.length > 0) {
     threshold: 0.18,
   });
 
-  revealElements.forEach((element) => observer.observe(element));
+  revealElements.forEach((element) => revealObserver.observe(element));
 } else {
   revealElements.forEach((element) => element.classList.add("is-visible"));
 }
@@ -169,8 +370,8 @@ const animateCounter = (element) => {
   window.requestAnimationFrame(step);
 };
 
-if ("IntersectionObserver" in window && counterElements.length > 0) {
-  const counterObserver = new IntersectionObserver((entries, currentObserver) => {
+if (supportsIntersectionObserver && counterElements.length > 0) {
+  counterObserver = new IntersectionObserver((entries, currentObserver) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) {
         return;
@@ -188,6 +389,8 @@ if ("IntersectionObserver" in window && counterElements.length > 0) {
   counterElements.forEach((element) => animateCounter(element));
 }
 
+refreshRevealObservers();
+
 if (contactForm) {
   contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -201,7 +404,7 @@ if (contactForm) {
 
     const whatsappNumber = "51920493433";
     const text = [
-      "Hola, quiero solicitar información.",
+      "Hola, quiero solicitar informacion.",
       `Nombre: ${nombre}`,
       empresa ? `Empresa: ${empresa}` : "",
       `Correo: ${correo}`,

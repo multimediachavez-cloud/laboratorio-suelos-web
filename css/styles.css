@@ -1174,6 +1174,10 @@ section[id] {
   padding: 92px 0;
 }
 
+.is-section-hidden {
+  display: none !important;
+}
+
 .section--light {
   background: transparent;
 }
