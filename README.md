@@ -1,48 +1,22 @@
-# Corporación Puerta Grande E.I.R.L.
+# Corporación Puerta Grande E.I.R.L. - Sitio Web Corporativo
 
-Sitio web estático para la empresa `Corporación Puerta Grande E.I.R.L.`, orientado a mostrar sus servicios de laboratorio y control de calidad para:
+Sitio web profesional para la presentación de servicios de laboratorio de suelos, pavimentos, agregados, concreto y asfaltos.
 
-- Suelos y rocas
-- Agregados
-- Concreto
-- Asfaltos
+## Servicios principales
 
-## Sitio publicado
+- Laboratorio de suelos y rocas
+- Laboratorio de agregados
+- Laboratorio de concreto
+- Laboratorio de asfaltos
+- Control de calidad en obras civiles
 
-- Producción: [https://multimediachavez-cloud.github.io/laboratorio-suelos-web/](https://multimediachavez-cloud.github.io/laboratorio-suelos-web/)
+## Tecnologías utilizadas
 
-## Estructura
+- HTML5
+- CSS3
+- JavaScript
+- GitHub Pages
 
-- `index.html`
-- `css/styles.css`
-- `js/main.js`
-- `assets/logo-cpg.svg`
-- `assets/consorcio-salud-santa-cruz.pdf`
+## Enlace del sitio
 
-## Ejecutar localmente
-
-En PowerShell:
-
-```powershell
-py -m http.server 5500
-```
-
-Luego abre:
-
-- [http://localhost:5500/](http://localhost:5500/)
-
-## Mejoras ya integradas
-
-- Identidad visual alineada al logo corporativo
-- Hero con motion y luces
-- Botón flotante de WhatsApp
-- Secciones comerciales, técnicas y de contacto
-- Carta de presentación enlazada
-- SEO básico para GitHub Pages
-
-## Datos principales
-
-- Empresa: `Corporación Puerta Grande E.I.R.L.`
-- RUC: `206015193390`
-- Correo: `cpgsuelosypavimentos@gmail.com`
-- Teléfonos: `975 457 825`, `920 493 433`, `978 062 723`
+https://multimediachavez-cloud.github.io/laboratorio-suelos-web/
