@@ -33,6 +33,14 @@ const serviceSectionIds = [
   "cobertura",
 ];
 
+const projectSectionIds = [
+  "proyectos",
+  "clientes",
+  "documentos",
+  "reportes",
+  "galeria",
+];
+
 const routeMap = {
   inicio: {
     activeNav: "inicio",
@@ -81,23 +89,23 @@ const routeMap = {
   },
   proyectos: {
     activeNav: "proyectos",
-    visibleIds: ["proyectos"],
+    visibleIds: projectSectionIds,
   },
   clientes: {
     activeNav: "proyectos",
-    visibleIds: ["clientes"],
+    visibleIds: projectSectionIds,
   },
   documentos: {
     activeNav: "proyectos",
-    visibleIds: ["documentos"],
+    visibleIds: projectSectionIds,
   },
   reportes: {
     activeNav: "proyectos",
-    visibleIds: ["reportes"],
+    visibleIds: projectSectionIds,
   },
   galeria: {
     activeNav: "proyectos",
-    visibleIds: ["galeria"],
+    visibleIds: projectSectionIds,
   },
   contacto: {
     activeNav: "contacto",
