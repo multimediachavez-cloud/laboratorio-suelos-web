@@ -2,6 +2,9 @@ const navToggle = document.querySelector("[data-nav-toggle]");
 const nav = document.querySelector("[data-nav]");
 const header = document.querySelector("[data-header]");
 const hero = document.querySelector(".hero");
+const heroScenes = [...document.querySelectorAll("[data-hero-scene]")];
+const heroShowcaseItems = [...document.querySelectorAll("[data-hero-stage]")];
+const heroShowcaseButtons = [...document.querySelectorAll("[data-hero-stage-button]")];
 const trustStrip = document.querySelector(".trust-strip");
 const navLinks = [...document.querySelectorAll(".nav__link[href^='#']")];
 const hashLinks = [...document.querySelectorAll("a[href^='#']")].filter((link) => {
@@ -115,6 +118,8 @@ const routeMap = {
 
 let revealObserver;
 let counterObserver;
+let heroStageIndex = 0;
+let heroStageTimer;
 
 const getSafeScrollBehavior = (behavior = "smooth") => {
   if (prefersReducedMotion) {
@@ -126,12 +131,67 @@ const getSafeScrollBehavior = (behavior = "smooth") => {
 
 const getHashId = (hashValue = "") => decodeURIComponent(hashValue.replace(/^#/, "")).trim();
 
+const getHeroStageCount = () => Math.max(heroScenes.length, heroShowcaseItems.length, heroShowcaseButtons.length, 0);
+
 const resolveRoute = (hashValue = "") => {
   const routeId = getHashId(hashValue) || defaultRouteId;
   return {
     requestedId: routeId,
     route: routeMap[routeId] || routeMap[defaultRouteId],
   };
+};
+
+const setHeroStage = (nextIndex) => {
+  const totalStages = getHeroStageCount();
+
+  if (totalStages === 0) {
+    return;
+  }
+
+  heroStageIndex = ((nextIndex % totalStages) + totalStages) % totalStages;
+
+  heroScenes.forEach((scene, sceneIndex) => {
+    scene.classList.toggle("is-active", sceneIndex === heroStageIndex);
+  });
+
+  heroShowcaseItems.forEach((item, itemIndex) => {
+    const isActive = itemIndex === heroStageIndex;
+    item.classList.toggle("is-active", isActive);
+    item.setAttribute("aria-hidden", String(!isActive));
+  });
+
+  heroShowcaseButtons.forEach((button, buttonIndex) => {
+    const isActive = buttonIndex === heroStageIndex;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+};
+
+const stopHeroStageRotation = () => {
+  if (!heroStageTimer) {
+    return;
+  }
+
+  window.clearInterval(heroStageTimer);
+  heroStageTimer = undefined;
+};
+
+const startHeroStageRotation = () => {
+  const totalStages = getHeroStageCount();
+
+  if (prefersReducedMotion || totalStages <= 1) {
+    return;
+  }
+
+  stopHeroStageRotation();
+  heroStageTimer = window.setInterval(() => {
+    setHeroStage(heroStageIndex + 1);
+  }, 4600);
+};
+
+const restartHeroStageRotation = () => {
+  stopHeroStageRotation();
+  startHeroStageRotation();
 };
 
 const closeNav = () => {
@@ -283,6 +343,28 @@ if (hero) {
   } else {
     enterHero();
   }
+}
+
+if (getHeroStageCount() > 0) {
+  setHeroStage(0);
+  startHeroStageRotation();
+
+  heroShowcaseButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const nextIndex = Number(button.dataset.heroStageButton || "0");
+      setHeroStage(nextIndex);
+      restartHeroStageRotation();
+    });
+  });
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      stopHeroStageRotation();
+      return;
+    }
+
+    startHeroStageRotation();
+  });
 }
 
 if (navToggle && nav) {
