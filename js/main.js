@@ -6,6 +6,9 @@ const heroScenes = [...document.querySelectorAll("[data-hero-scene]")];
 const heroMediaItems = [...document.querySelectorAll("[data-hero-media]")];
 const heroShowcaseItems = [...document.querySelectorAll("[data-hero-stage]")];
 const heroShowcaseButtons = [...document.querySelectorAll("[data-hero-stage-button]")];
+const projectMediaItems = [...document.querySelectorAll("[data-project-media]")];
+const projectShowcaseItems = [...document.querySelectorAll("[data-project-stage]")];
+const projectShowcaseButtons = [...document.querySelectorAll("[data-project-stage-button]")];
 const trustStrip = document.querySelector(".trust-strip");
 const navLinks = [...document.querySelectorAll(".nav__link[href^='#']")];
 const hashLinks = [...document.querySelectorAll("a[href^='#']")].filter((link) => {
@@ -121,6 +124,8 @@ let revealObserver;
 let counterObserver;
 let heroStageIndex = 0;
 let heroStageTimer;
+let projectStageIndex = 0;
+let projectStageTimer;
 
 const getSafeScrollBehavior = (behavior = "smooth") => {
   if (prefersReducedMotion) {
@@ -203,6 +208,80 @@ const startHeroStageRotation = () => {
 const restartHeroStageRotation = () => {
   stopHeroStageRotation();
   startHeroStageRotation();
+};
+
+const getProjectStageCount = () => Math.max(
+  projectMediaItems.length,
+  projectShowcaseItems.length,
+  projectShowcaseButtons.length,
+  0,
+);
+
+const setProjectStage = (nextIndex) => {
+  const totalStages = getProjectStageCount();
+
+  if (totalStages === 0) {
+    return;
+  }
+
+  projectStageIndex = ((nextIndex % totalStages) + totalStages) % totalStages;
+
+  projectMediaItems.forEach((media, mediaIndex) => {
+    media.classList.toggle("is-active", mediaIndex === projectStageIndex);
+  });
+
+  projectShowcaseItems.forEach((item, itemIndex) => {
+    const isActive = itemIndex === projectStageIndex;
+    item.classList.toggle("is-active", isActive);
+    item.setAttribute("aria-hidden", String(!isActive));
+  });
+
+  projectShowcaseButtons.forEach((button, buttonIndex) => {
+    const isActive = buttonIndex === projectStageIndex;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+};
+
+const stopProjectStageRotation = () => {
+  if (!projectStageTimer) {
+    return;
+  }
+
+  window.clearInterval(projectStageTimer);
+  projectStageTimer = undefined;
+};
+
+const startProjectStageRotation = () => {
+  const totalStages = getProjectStageCount();
+
+  if (prefersReducedMotion || totalStages <= 1) {
+    return;
+  }
+
+  stopProjectStageRotation();
+  projectStageTimer = window.setInterval(() => {
+    setProjectStage(projectStageIndex + 1);
+  }, 5000);
+};
+
+const restartProjectStageRotation = () => {
+  stopProjectStageRotation();
+  startProjectStageRotation();
+};
+
+const syncShowcaseRotations = (route) => {
+  if (route.activeNav === "inicio") {
+    startHeroStageRotation();
+  } else {
+    stopHeroStageRotation();
+  }
+
+  if (route.activeNav === "proyectos") {
+    startProjectStageRotation();
+  } else {
+    stopProjectStageRotation();
+  }
 };
 
 const closeNav = () => {
@@ -309,6 +388,7 @@ const applyRoute = (hashValue, { behavior = "smooth" } = {}) => {
   const { requestedId, route } = resolveRoute(hashValue);
   toggleRouteSections(route);
   setActiveNavLink(route.activeNav);
+  syncShowcaseRotations(route);
   closeNav();
 
   window.requestAnimationFrame(() => {
@@ -358,7 +438,6 @@ if (hero) {
 
 if (getHeroStageCount() > 0) {
   setHeroStage(0);
-  startHeroStageRotation();
 
   heroShowcaseButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -367,16 +446,30 @@ if (getHeroStageCount() > 0) {
       restartHeroStageRotation();
     });
   });
+}
 
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-      stopHeroStageRotation();
-      return;
-    }
+if (getProjectStageCount() > 0) {
+  setProjectStage(0);
 
-    startHeroStageRotation();
+  projectShowcaseButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const nextIndex = Number(button.dataset.projectStageButton || "0");
+      setProjectStage(nextIndex);
+      restartProjectStageRotation();
+    });
   });
 }
+
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    stopHeroStageRotation();
+    stopProjectStageRotation();
+    return;
+  }
+
+  const { route } = resolveRoute(window.location.hash);
+  syncShowcaseRotations(route);
+});
 
 if (navToggle && nav) {
   navToggle.addEventListener("click", () => {

@@ -1233,6 +1233,129 @@ section[id] {
   box-shadow: 0 0 0 6px rgba(242, 133, 38, 0.12);
 }
 
+.section-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+  gap: 22px;
+  align-items: stretch;
+  margin-bottom: 52px;
+}
+
+.section-showcase__copy,
+.section-showcase__panel {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+}
+
+.section-showcase__copy {
+  padding: 34px 32px;
+  background:
+    radial-gradient(circle at top right, rgba(242, 133, 38, 0.16), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 243, 235, 0.92));
+  border: 1px solid rgba(42, 53, 143, 0.08);
+}
+
+.section-showcase__copy::after,
+.section-showcase__panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.section-showcase__copy::after {
+  background:
+    linear-gradient(90deg, rgba(42, 53, 143, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(42, 53, 143, 0.05) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.16), transparent 70%);
+}
+
+.section-showcase__panel::after {
+  inset: -30% auto auto -18%;
+  width: 52%;
+  height: 180%;
+  transform: rotate(18deg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15), transparent 72%);
+  opacity: 0.38;
+}
+
+.section-showcase__copy > *,
+.section-showcase__panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.section-showcase__copy h2 {
+  margin: 18px 0 14px;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  color: var(--text);
+}
+
+.section-showcase__copy p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 1.02rem;
+}
+
+.section-showcase__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.section-showcase__stat {
+  padding: 18px 16px;
+  border-radius: 22px;
+  background: rgba(16, 21, 61, 0.04);
+  border: 1px solid rgba(42, 53, 143, 0.08);
+}
+
+.section-showcase__stat strong {
+  display: block;
+  color: var(--accent-strong);
+  font-family: "Sora", "Segoe UI", sans-serif;
+  font-size: 1.08rem;
+}
+
+.section-showcase__stat span {
+  display: block;
+  margin-top: 8px;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+}
+
+.section-showcase__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.section-showcase__panel {
+  padding: 24px;
+  background:
+    radial-gradient(circle at top right, rgba(242, 133, 38, 0.18), transparent 22%),
+    linear-gradient(160deg, rgba(27, 35, 102, 1), rgba(16, 21, 61, 1));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-showcase--section {
+  gap: 18px;
+}
+
+.hero-showcase--section .hero-showcase__visuals {
+  min-height: 250px;
+}
+
+.hero-showcase--section .hero-showcase__stage {
+  min-height: 214px;
+}
+
 .hero-card__label,
 .detail-panel__title {
   display: inline-flex;
@@ -2513,6 +2636,10 @@ section[id] {
 }
 
 @media (max-width: 1120px) {
+  .section-showcase {
+    grid-template-columns: 1fr;
+  }
+
   .service-grid,
   .coverage-stats,
   .entity-grid,
@@ -2649,6 +2776,7 @@ section[id] {
   .contact-form,
   .service-grid,
   .coverage-stats,
+  .section-showcase__stats,
   .hero-card--secondary,
   .about-grid,
   .detail-section .detail-grid {
@@ -2739,6 +2867,14 @@ section[id] {
     min-height: 200px;
   }
 
+  .hero-showcase--section .hero-showcase__visuals {
+    min-height: 220px;
+  }
+
+  .hero-showcase--section .hero-showcase__stage {
+    min-height: 238px;
+  }
+
   .document-card--featured,
   .report-card--featured {
     grid-column: span 1;
@@ -2770,6 +2906,20 @@ section[id] {
   .topbar__item,
   .topbar__socials {
     justify-content: center;
+  }
+
+  .section-showcase {
+    margin-bottom: 38px;
+  }
+
+  .section-showcase__copy,
+  .section-showcase__panel {
+    padding: 24px 20px;
+  }
+
+  .section-showcase__actions {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .header__content {
@@ -2885,6 +3035,14 @@ section[id] {
 
   .hero-showcase__visuals {
     min-height: 172px;
+  }
+
+  .hero-showcase--section .hero-showcase__visuals {
+    min-height: 188px;
+  }
+
+  .hero-showcase--section .hero-showcase__stage {
+    min-height: 268px;
   }
 
   .hero__panel {
