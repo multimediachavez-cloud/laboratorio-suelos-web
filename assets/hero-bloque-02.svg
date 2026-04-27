@@ -1,34 +1,40 @@
 <svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg2" x1="92" y1="46" x2="1088" y2="724" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#10163F"/>
-      <stop offset="1" stop-color="#4F63D8"/>
+    <linearGradient id="bg2" x1="88" y1="54" x2="1106" y2="714" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A225E"/>
+      <stop offset="1" stop-color="#4156D4"/>
     </linearGradient>
-    <radialGradient id="glow2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(224 598) rotate(-37.4) scale(278.748 198.216)">
-      <stop stop-color="#6F82FF" stop-opacity="0.38"/>
-      <stop offset="1" stop-color="#6F82FF" stop-opacity="0"/>
-    </radialGradient>
+    <linearGradient id="panel2" x1="120" y1="120" x2="1060" y2="336" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.05"/>
+    </linearGradient>
   </defs>
   <rect width="1200" height="760" rx="46" fill="url(#bg2)"/>
-  <circle cx="224" cy="598" r="240" fill="url(#glow2)"/>
-  <rect x="74" y="72" width="1052" height="616" rx="38" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.1"/>
-  <rect x="118" y="120" width="964" height="214" rx="32" fill="white" fill-opacity="0.05" stroke="white" stroke-opacity="0.08"/>
-  <text x="168" y="196" fill="#FFD7B4" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="3">BLOQUE 02</text>
-  <text x="168" y="264" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="56" font-weight="800">Edita esta imagen con una foto de</text>
-  <text x="168" y="326" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="56" font-weight="800">servicios, muestras o laboratorio</text>
-  <rect x="118" y="372" width="304" height="264" rx="28" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.08"/>
-  <rect x="448" y="372" width="304" height="264" rx="28" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.08"/>
-  <rect x="778" y="372" width="304" height="264" rx="28" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.08"/>
-  <text x="158" y="446" fill="#FFD7B4" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">Suelos y rocas</text>
-  <text x="488" y="446" fill="#FFD7B4" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">Agregados y concreto</text>
-  <text x="818" y="446" fill="#FFD7B4" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">Pavimentos y asfaltos</text>
-  <rect x="158" y="484" width="224" height="112" rx="18" fill="#F28526" fill-opacity="0.12" stroke="#FFD7B4" stroke-opacity="0.3"/>
-  <rect x="488" y="484" width="224" height="112" rx="18" fill="#F28526" fill-opacity="0.12" stroke="#FFD7B4" stroke-opacity="0.3"/>
-  <rect x="818" y="484" width="224" height="112" rx="18" fill="#F28526" fill-opacity="0.12" stroke="#FFD7B4" stroke-opacity="0.3"/>
-  <text x="172" y="530" fill="#FFF3E7" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Reemplaza por foto real</text>
-  <text x="172" y="566" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">assets/hero-bloque-02.svg</text>
-  <text x="502" y="530" fill="#FFF3E7" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Usa imagen de ensayos</text>
-  <text x="502" y="566" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">o mesa de laboratorio</text>
-  <text x="832" y="530" fill="#FFF3E7" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Tambien puedes poner</text>
-  <text x="832" y="566" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">obras o maquinaria</text>
+  <circle cx="232" cy="596" r="230" fill="#6F82FF" fill-opacity="0.18"/>
+  <circle cx="946" cy="148" r="210" fill="#F28526" fill-opacity="0.14"/>
+  <rect x="72" y="70" width="1056" height="620" rx="38" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.1"/>
+  <rect x="116" y="114" width="968" height="228" rx="32" fill="url(#panel2)" stroke="white" stroke-opacity="0.1"/>
+  <text x="162" y="188" fill="#FFD7B4" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="3">SERVICIOS INTEGRADOS</text>
+  <text x="162" y="262" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="58" font-weight="800">Laboratorio y control de calidad</text>
+  <text x="162" y="326" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600">Una presentacion mas clara para ensayos, muestreo y soporte tecnico en obra.</text>
+  <rect x="116" y="382" width="218" height="238" rx="28" fill="white" fill-opacity="0.08" stroke="white" stroke-opacity="0.1"/>
+  <rect x="354" y="382" width="218" height="238" rx="28" fill="white" fill-opacity="0.08" stroke="white" stroke-opacity="0.1"/>
+  <rect x="592" y="382" width="218" height="238" rx="28" fill="white" fill-opacity="0.08" stroke="white" stroke-opacity="0.1"/>
+  <rect x="830" y="382" width="254" height="238" rx="28" fill="#F28526" fill-opacity="0.16" stroke="#FFD7B4" stroke-opacity="0.32"/>
+  <circle cx="182" cy="448" r="24" fill="#F28526"/>
+  <circle cx="420" cy="448" r="24" fill="#F28526"/>
+  <circle cx="658" cy="448" r="24" fill="#F28526"/>
+  <circle cx="896" cy="448" r="24" fill="#FFD7B4"/>
+  <text x="160" y="506" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="800">Suelos</text>
+  <text x="160" y="542" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600">Granulometria, humedad,</text>
+  <text x="160" y="574" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600">equivalente de arena.</text>
+  <text x="398" y="506" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="800">Agregados</text>
+  <text x="398" y="542" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600">Control de base, sub-base</text>
+  <text x="398" y="574" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600">y materiales de cantera.</text>
+  <text x="636" y="506" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="800">Concreto</text>
+  <text x="636" y="542" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600">Moldeo de probetas,</text>
+  <text x="636" y="574" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600">curado y verificacion.</text>
+  <text x="874" y="506" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="800">Asfaltos y pavimentos</text>
+  <text x="874" y="542" fill="#FFF2E6" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600">Ensayos y control de capas</text>
+  <text x="874" y="574" fill="#FFF2E6" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600">para obras de transitabilidad.</text>
 </svg>

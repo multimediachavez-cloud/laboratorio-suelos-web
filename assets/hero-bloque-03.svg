@@ -1,33 +1,33 @@
 <svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg3" x1="110" y1="60" x2="1118" y2="714" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#1A225E"/>
-      <stop offset="1" stop-color="#24306D"/>
+    <linearGradient id="bg3" x1="98" y1="60" x2="1120" y2="714" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#18215C"/>
+      <stop offset="1" stop-color="#22306C"/>
     </linearGradient>
-    <radialGradient id="glow3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(948 140) rotate(136) scale(336.114 248.453)">
-      <stop stop-color="#FF9A3F" stop-opacity="0.34"/>
-      <stop offset="1" stop-color="#FF9A3F" stop-opacity="0"/>
-    </radialGradient>
+    <linearGradient id="doc3" x1="134" y1="148" x2="516" y2="604" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.05"/>
+    </linearGradient>
   </defs>
   <rect width="1200" height="760" rx="46" fill="url(#bg3)"/>
-  <circle cx="948" cy="140" r="260" fill="url(#glow3)"/>
+  <circle cx="950" cy="146" r="228" fill="#F28526" fill-opacity="0.14"/>
+  <circle cx="222" cy="602" r="208" fill="#5F6EDE" fill-opacity="0.16"/>
   <rect x="70" y="68" width="1060" height="624" rx="38" fill="white" fill-opacity="0.05" stroke="white" stroke-opacity="0.1"/>
-  <rect x="112" y="114" width="512" height="532" rx="34" fill="white" fill-opacity="0.05" stroke="white" stroke-opacity="0.08"/>
-  <text x="162" y="196" fill="#FFD7B4" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="3">BLOQUE 03</text>
-  <text x="162" y="274" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="62" font-weight="800">Imagen editable</text>
-  <text x="162" y="344" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="62" font-weight="800">para mostrar</text>
-  <text x="162" y="414" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="62" font-weight="800">respaldo real</text>
-  <text x="162" y="480" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600">Ideal para fotos de clientes, reportes,</text>
-  <text x="162" y="518" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600">tecnicos en obra o evidencias del servicio.</text>
-  <text x="162" y="572" fill="#FFD7B4" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">Ruta editable: assets/hero-bloque-03.svg</text>
-  <rect x="692" y="136" width="344" height="468" rx="34" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.1"/>
-  <rect x="736" y="186" width="256" height="162" rx="22" fill="#F28526" fill-opacity="0.14" stroke="#FFD7B4" stroke-opacity="0.32"/>
-  <path d="M766 312L832 258L874 290L928 238L962 270" stroke="#FFD7B4" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="832" cy="258" r="14" fill="#FFD7B4"/>
-  <circle cx="928" cy="238" r="14" fill="#FFD7B4"/>
-  <rect x="736" y="376" width="256" height="168" rx="22" fill="white" fill-opacity="0.05" stroke="white" stroke-opacity="0.08"/>
-  <text x="766" y="432" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">Recomendado:</text>
-  <text x="766" y="470" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600">Foto de responsable tecnico</text>
-  <text x="766" y="504" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600">con muestras, equipo o frente</text>
-  <text x="766" y="538" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600">de obra para reforzar confianza.</text>
+  <rect x="116" y="114" width="424" height="532" rx="34" fill="url(#doc3)" stroke="white" stroke-opacity="0.1"/>
+  <text x="160" y="190" fill="#FFD7B4" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="3">RESPALDO OPERATIVO</text>
+  <text x="160" y="272" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="58" font-weight="800">Reportes, clientes</text>
+  <text x="160" y="336" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="58" font-weight="800">y evidencia real</text>
+  <text x="160" y="400" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600">La portada tambien puede reforzar confianza con</text>
+  <text x="160" y="438" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600">documentos, avances y soporte para supervisiones.</text>
+  <rect x="160" y="500" width="182" height="42" rx="21" fill="#F28526"/>
+  <text x="192" y="528" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="800">Documentos listos</text>
+  <rect x="640" y="132" width="392" height="156" rx="30" fill="white" fill-opacity="0.08" stroke="white" stroke-opacity="0.1"/>
+  <rect x="640" y="316" width="392" height="136" rx="30" fill="white" fill-opacity="0.08" stroke="white" stroke-opacity="0.1"/>
+  <rect x="640" y="480" width="392" height="124" rx="30" fill="#F28526" fill-opacity="0.16" stroke="#FFD7B4" stroke-opacity="0.3"/>
+  <text x="686" y="194" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="800">Carta de presentacion corporativa</text>
+  <text x="686" y="236" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600">PDF comercial para clientes, consorcios y entidades.</text>
+  <text x="686" y="372" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="800">Reporte de avances y registros</text>
+  <text x="686" y="414" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600">Resumen de campo, fechas y actividades ejecutadas.</text>
+  <text x="686" y="536" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="800">Atencion directa por WhatsApp</text>
+  <text x="686" y="576" fill="#FFF2E6" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600">Cotizaciones, seguimiento y envio de evidencias.</text>
 </svg>
