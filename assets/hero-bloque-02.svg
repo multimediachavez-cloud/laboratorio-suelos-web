@@ -1,0 +1,34 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="92" y1="46" x2="1088" y2="724" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10163F"/>
+      <stop offset="1" stop-color="#4F63D8"/>
+    </linearGradient>
+    <radialGradient id="glow2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(224 598) rotate(-37.4) scale(278.748 198.216)">
+      <stop stop-color="#6F82FF" stop-opacity="0.38"/>
+      <stop offset="1" stop-color="#6F82FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="760" rx="46" fill="url(#bg2)"/>
+  <circle cx="224" cy="598" r="240" fill="url(#glow2)"/>
+  <rect x="74" y="72" width="1052" height="616" rx="38" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.1"/>
+  <rect x="118" y="120" width="964" height="214" rx="32" fill="white" fill-opacity="0.05" stroke="white" stroke-opacity="0.08"/>
+  <text x="168" y="196" fill="#FFD7B4" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="3">BLOQUE 02</text>
+  <text x="168" y="264" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="56" font-weight="800">Edita esta imagen con una foto de</text>
+  <text x="168" y="326" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="56" font-weight="800">servicios, muestras o laboratorio</text>
+  <rect x="118" y="372" width="304" height="264" rx="28" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.08"/>
+  <rect x="448" y="372" width="304" height="264" rx="28" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.08"/>
+  <rect x="778" y="372" width="304" height="264" rx="28" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.08"/>
+  <text x="158" y="446" fill="#FFD7B4" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">Suelos y rocas</text>
+  <text x="488" y="446" fill="#FFD7B4" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">Agregados y concreto</text>
+  <text x="818" y="446" fill="#FFD7B4" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">Pavimentos y asfaltos</text>
+  <rect x="158" y="484" width="224" height="112" rx="18" fill="#F28526" fill-opacity="0.12" stroke="#FFD7B4" stroke-opacity="0.3"/>
+  <rect x="488" y="484" width="224" height="112" rx="18" fill="#F28526" fill-opacity="0.12" stroke="#FFD7B4" stroke-opacity="0.3"/>
+  <rect x="818" y="484" width="224" height="112" rx="18" fill="#F28526" fill-opacity="0.12" stroke="#FFD7B4" stroke-opacity="0.3"/>
+  <text x="172" y="530" fill="#FFF3E7" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Reemplaza por foto real</text>
+  <text x="172" y="566" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">assets/hero-bloque-02.svg</text>
+  <text x="502" y="530" fill="#FFF3E7" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Usa imagen de ensayos</text>
+  <text x="502" y="566" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">o mesa de laboratorio</text>
+  <text x="832" y="530" fill="#FFF3E7" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Tambien puedes poner</text>
+  <text x="832" y="566" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">obras o maquinaria</text>
+</svg>

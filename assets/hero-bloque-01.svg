@@ -1,0 +1,31 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg1" x1="110" y1="84" x2="1114" y2="710" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A215C"/>
+      <stop offset="1" stop-color="#2F3F9F"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(935 154) rotate(132.8) scale(292.431 246.175)">
+      <stop stop-color="#F28526" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#F28526" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="760" rx="46" fill="url(#bg1)"/>
+  <circle cx="935" cy="154" r="240" fill="url(#glow1)"/>
+  <rect x="70" y="68" width="1060" height="624" rx="36" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.1"/>
+  <rect x="110" y="106" width="460" height="548" rx="30" fill="white" fill-opacity="0.05" stroke="white" stroke-opacity="0.08"/>
+  <text x="156" y="194" fill="#FFD7B4" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="3">BLOQUE 01</text>
+  <text x="156" y="268" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="64" font-weight="800">Reemplaza esta</text>
+  <text x="156" y="338" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="64" font-weight="800">imagen por una</text>
+  <text x="156" y="408" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="64" font-weight="800">foto real</text>
+  <text x="156" y="474" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600">Ruta editable: assets/hero-bloque-01.svg</text>
+  <text x="156" y="518" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600">Uso sugerido: laboratorio, equipo o ensayo en campo</text>
+  <rect x="676" y="144" width="356" height="252" rx="28" fill="white" fill-opacity="0.08" stroke="white" stroke-opacity="0.1"/>
+  <rect x="726" y="198" width="256" height="146" rx="18" fill="#F28526" fill-opacity="0.16" stroke="#FFD7B4" stroke-opacity="0.4"/>
+  <path d="M766 314L832 248L884 290L942 230L990 286" stroke="#FFD7B4" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="832" cy="248" r="14" fill="#FFD7B4"/>
+  <circle cx="942" cy="230" r="14" fill="#FFD7B4"/>
+  <rect x="676" y="432" width="356" height="170" rx="28" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.08"/>
+  <text x="726" y="498" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Idea visual:</text>
+  <text x="726" y="542" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600">Foto de muestra, equipo tecnico</text>
+  <text x="726" y="578" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600">o presencia en obra.</text>
+</svg>

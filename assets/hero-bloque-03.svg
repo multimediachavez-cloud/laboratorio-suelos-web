@@ -1,0 +1,33 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="110" y1="60" x2="1118" y2="714" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A225E"/>
+      <stop offset="1" stop-color="#24306D"/>
+    </linearGradient>
+    <radialGradient id="glow3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(948 140) rotate(136) scale(336.114 248.453)">
+      <stop stop-color="#FF9A3F" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#FF9A3F" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="760" rx="46" fill="url(#bg3)"/>
+  <circle cx="948" cy="140" r="260" fill="url(#glow3)"/>
+  <rect x="70" y="68" width="1060" height="624" rx="38" fill="white" fill-opacity="0.05" stroke="white" stroke-opacity="0.1"/>
+  <rect x="112" y="114" width="512" height="532" rx="34" fill="white" fill-opacity="0.05" stroke="white" stroke-opacity="0.08"/>
+  <text x="162" y="196" fill="#FFD7B4" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="3">BLOQUE 03</text>
+  <text x="162" y="274" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="62" font-weight="800">Imagen editable</text>
+  <text x="162" y="344" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="62" font-weight="800">para mostrar</text>
+  <text x="162" y="414" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="62" font-weight="800">respaldo real</text>
+  <text x="162" y="480" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600">Ideal para fotos de clientes, reportes,</text>
+  <text x="162" y="518" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600">tecnicos en obra o evidencias del servicio.</text>
+  <text x="162" y="572" fill="#FFD7B4" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">Ruta editable: assets/hero-bloque-03.svg</text>
+  <rect x="692" y="136" width="344" height="468" rx="34" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.1"/>
+  <rect x="736" y="186" width="256" height="162" rx="22" fill="#F28526" fill-opacity="0.14" stroke="#FFD7B4" stroke-opacity="0.32"/>
+  <path d="M766 312L832 258L874 290L928 238L962 270" stroke="#FFD7B4" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="832" cy="258" r="14" fill="#FFD7B4"/>
+  <circle cx="928" cy="238" r="14" fill="#FFD7B4"/>
+  <rect x="736" y="376" width="256" height="168" rx="22" fill="white" fill-opacity="0.05" stroke="white" stroke-opacity="0.08"/>
+  <text x="766" y="432" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">Recomendado:</text>
+  <text x="766" y="470" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600">Foto de responsable tecnico</text>
+  <text x="766" y="504" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600">con muestras, equipo o frente</text>
+  <text x="766" y="538" fill="#D9E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600">de obra para reforzar confianza.</text>
+</svg>

@@ -3,6 +3,7 @@ const nav = document.querySelector("[data-nav]");
 const header = document.querySelector("[data-header]");
 const hero = document.querySelector(".hero");
 const heroScenes = [...document.querySelectorAll("[data-hero-scene]")];
+const heroMediaItems = [...document.querySelectorAll("[data-hero-media]")];
 const heroShowcaseItems = [...document.querySelectorAll("[data-hero-stage]")];
 const heroShowcaseButtons = [...document.querySelectorAll("[data-hero-stage-button]")];
 const trustStrip = document.querySelector(".trust-strip");
@@ -131,7 +132,13 @@ const getSafeScrollBehavior = (behavior = "smooth") => {
 
 const getHashId = (hashValue = "") => decodeURIComponent(hashValue.replace(/^#/, "")).trim();
 
-const getHeroStageCount = () => Math.max(heroScenes.length, heroShowcaseItems.length, heroShowcaseButtons.length, 0);
+const getHeroStageCount = () => Math.max(
+  heroScenes.length,
+  heroMediaItems.length,
+  heroShowcaseItems.length,
+  heroShowcaseButtons.length,
+  0,
+);
 
 const resolveRoute = (hashValue = "") => {
   const routeId = getHashId(hashValue) || defaultRouteId;
@@ -152,6 +159,10 @@ const setHeroStage = (nextIndex) => {
 
   heroScenes.forEach((scene, sceneIndex) => {
     scene.classList.toggle("is-active", sceneIndex === heroStageIndex);
+  });
+
+  heroMediaItems.forEach((media, mediaIndex) => {
+    media.classList.toggle("is-active", mediaIndex === heroStageIndex);
   });
 
   heroShowcaseItems.forEach((item, itemIndex) => {
