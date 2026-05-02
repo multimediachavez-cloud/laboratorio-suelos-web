@@ -1183,14 +1183,17 @@ section[id] {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  align-items: stretch;
 }
 
 .hero-showcase__button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   min-height: 42px;
   padding: 0 14px;
+  min-width: 0;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.04);
@@ -1198,6 +1201,8 @@ section[id] {
   font-size: 0.84rem;
   font-weight: 800;
   letter-spacing: 0.04em;
+  line-height: 1.15;
+  text-align: center;
   text-transform: uppercase;
   transition:
     color 180ms ease,
@@ -3093,6 +3098,7 @@ section[id] {
 .footer__column {
   display: grid;
   align-content: start;
+  min-width: 0;
   gap: 16px;
 }
 
@@ -3112,6 +3118,12 @@ section[id] {
   display: grid;
   gap: 12px;
   color: rgba(255, 255, 255, 0.78);
+}
+
+.footer__stack a,
+.footer__stack span {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .footer__stack a,
@@ -3548,11 +3560,22 @@ section[id] {
   }
 
   .hero-showcase__stage {
-    min-height: 250px;
+    min-height: 320px;
   }
 
   .hero-showcase__visuals {
     min-height: 200px;
+  }
+
+  .hero-showcase__controls {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero-showcase__button {
+    width: 100%;
+    min-height: 54px;
+    padding: 10px 12px;
   }
 
   .hero-showcase--section .hero-showcase__visuals {
@@ -3560,7 +3583,7 @@ section[id] {
   }
 
   .hero-showcase--section .hero-showcase__stage {
-    min-height: 238px;
+    min-height: 276px;
   }
 
   .document-card--featured,
@@ -3719,6 +3742,10 @@ section[id] {
   .hero-card--secondary,
   .hero-diagram {
     display: none;
+  }
+
+  .footer__stack {
+    gap: 10px;
   }
 
   .hero-showcase__visuals {
