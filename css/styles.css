@@ -1066,7 +1066,7 @@ section[id] {
 .hero-showcase {
   grid-column: 1 / -1;
   display: grid;
-  gap: 16px;
+  gap: 18px;
 }
 
 .hero-showcase__visuals {
@@ -1108,7 +1108,9 @@ section[id] {
 .hero-showcase__stage {
   position: relative;
   min-height: 238px;
+  display: block;
   overflow: hidden;
+  will-change: height;
   transition: height 320ms ease, min-height 320ms ease;
 }
 
@@ -1119,7 +1121,8 @@ section[id] {
   left: 0;
   display: grid;
   align-content: start;
-  gap: 14px;
+  gap: 16px;
+  padding-bottom: 2px;
   opacity: 0;
   transform: translateY(18px);
   pointer-events: none;
@@ -1155,23 +1158,27 @@ section[id] {
   font-family: "Sora", "Segoe UI", sans-serif;
   font-size: clamp(1.42rem, 2vw, 1.9rem);
   line-height: 1.14;
+  text-wrap: balance;
 }
 
 .hero-showcase p {
   margin: 0;
+  max-width: 48ch;
   color: rgba(255, 255, 255, 0.76);
   font-size: 0.98rem;
+  line-height: 1.62;
 }
 
 .hero-showcase__tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
 .hero-showcase__tags span {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   min-height: 36px;
   padding: 0 14px;
   border-radius: 999px;
@@ -1181,11 +1188,14 @@ section[id] {
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.03em;
+  line-height: 1.15;
+  text-align: center;
+  white-space: normal;
 }
 
 .hero-showcase__controls {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
   align-items: stretch;
 }
@@ -1195,8 +1205,9 @@ section[id] {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  min-height: 42px;
-  padding: 0 14px;
+  width: 100%;
+  min-height: 52px;
+  padding: 10px 14px;
   min-width: 0;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1208,6 +1219,7 @@ section[id] {
   line-height: 1.15;
   text-align: center;
   text-transform: uppercase;
+  white-space: normal;
   transition:
     color 180ms ease,
     background 180ms ease,
@@ -1230,6 +1242,7 @@ section[id] {
 }
 
 .hero-showcase__dot {
+  flex: 0 0 auto;
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -1354,7 +1367,7 @@ section[id] {
 }
 
 .hero-showcase--section {
-  gap: 18px;
+  gap: 20px;
 }
 
 .hero-showcase--section .hero-showcase__visuals {

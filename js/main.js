@@ -247,6 +247,20 @@ const syncAllShowcaseStageHeights = () => {
   syncShowcaseStageHeight(projectShowcaseItems, projectShowcaseStage);
 };
 
+const bindShowcaseHeightObserver = (items, stageElement) => {
+  if (!("ResizeObserver" in window) || !stageElement || items.length === 0) {
+    return;
+  }
+
+  const resizeObserver = new ResizeObserver(() => {
+    window.requestAnimationFrame(() => {
+      syncShowcaseStageHeight(items, stageElement);
+    });
+  });
+
+  items.forEach((item) => resizeObserver.observe(item));
+};
+
 const setProjectStage = (nextIndex) => {
   const totalStages = getProjectStageCount();
 
@@ -471,6 +485,7 @@ if (hero) {
 
 if (getHeroStageCount() > 0) {
   setHeroStage(0);
+  bindShowcaseHeightObserver(heroShowcaseItems, heroShowcaseStage);
 
   heroShowcaseButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -483,6 +498,7 @@ if (getHeroStageCount() > 0) {
 
 if (getProjectStageCount() > 0) {
   setProjectStage(0);
+  bindShowcaseHeightObserver(projectShowcaseItems, projectShowcaseStage);
 
   projectShowcaseButtons.forEach((button) => {
     button.addEventListener("click", () => {
