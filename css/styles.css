@@ -3583,7 +3583,11 @@ section[id] {
   }
 
   .hero-showcase--section .hero-showcase__stage {
-    min-height: 276px;
+    min-height: 312px;
+  }
+
+  .hero-showcase--section .hero-showcase__controls {
+    margin-top: 8px;
   }
 
   .document-card--featured,
@@ -3757,7 +3761,17 @@ section[id] {
   }
 
   .hero-showcase--section .hero-showcase__stage {
-    min-height: 268px;
+    min-height: 360px;
+  }
+
+  .hero-showcase--section .hero-showcase__tags {
+    gap: 8px;
+  }
+
+  .hero-showcase--section .hero-showcase__tags span {
+    min-height: 32px;
+    padding: 0 12px;
+    font-size: 0.76rem;
   }
 
   .hero__panel {
