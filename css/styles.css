@@ -1108,11 +1108,15 @@ section[id] {
 .hero-showcase__stage {
   position: relative;
   min-height: 238px;
+  overflow: hidden;
+  transition: height 320ms ease, min-height 320ms ease;
 }
 
 .hero-showcase__item {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  left: 0;
   display: grid;
   align-content: start;
   gap: 14px;

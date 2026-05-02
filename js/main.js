@@ -6,9 +6,11 @@ const heroScenes = [...document.querySelectorAll("[data-hero-scene]")];
 const heroMediaItems = [...document.querySelectorAll("[data-hero-media]")];
 const heroShowcaseItems = [...document.querySelectorAll("[data-hero-stage]")];
 const heroShowcaseButtons = [...document.querySelectorAll("[data-hero-stage-button]")];
+const heroShowcaseStage = heroShowcaseItems[0]?.parentElement ?? null;
 const projectMediaItems = [...document.querySelectorAll("[data-project-media]")];
 const projectShowcaseItems = [...document.querySelectorAll("[data-project-stage]")];
 const projectShowcaseButtons = [...document.querySelectorAll("[data-project-stage-button]")];
+const projectShowcaseStage = projectShowcaseItems[0]?.parentElement ?? null;
 const trustStrip = document.querySelector(".trust-strip");
 const navLinks = [...document.querySelectorAll(".nav__link[href^='#']")];
 const hashLinks = [...document.querySelectorAll("a[href^='#']")].filter((link) => {
@@ -181,6 +183,8 @@ const setHeroStage = (nextIndex) => {
     button.classList.toggle("is-active", isActive);
     button.setAttribute("aria-pressed", String(isActive));
   });
+
+  syncShowcaseStageHeight(heroShowcaseItems, heroShowcaseStage);
 };
 
 const stopHeroStageRotation = () => {
@@ -217,6 +221,32 @@ const getProjectStageCount = () => Math.max(
   0,
 );
 
+const syncShowcaseStageHeight = (items, stageElement) => {
+  if (!stageElement || items.length === 0 || stageElement.offsetParent === null) {
+    return;
+  }
+
+  const activeItem = items.find((item) => item.classList.contains("is-active")) || items[0];
+
+  if (!activeItem) {
+    return;
+  }
+
+  const nextHeight = Math.ceil(activeItem.getBoundingClientRect().height);
+
+  if (nextHeight <= 0) {
+    return;
+  }
+
+  stageElement.style.height = `${nextHeight}px`;
+  stageElement.style.minHeight = `${nextHeight}px`;
+};
+
+const syncAllShowcaseStageHeights = () => {
+  syncShowcaseStageHeight(heroShowcaseItems, heroShowcaseStage);
+  syncShowcaseStageHeight(projectShowcaseItems, projectShowcaseStage);
+};
+
 const setProjectStage = (nextIndex) => {
   const totalStages = getProjectStageCount();
 
@@ -241,6 +271,8 @@ const setProjectStage = (nextIndex) => {
     button.classList.toggle("is-active", isActive);
     button.setAttribute("aria-pressed", String(isActive));
   });
+
+  syncShowcaseStageHeight(projectShowcaseItems, projectShowcaseStage);
 };
 
 const stopProjectStageRotation = () => {
@@ -393,6 +425,7 @@ const applyRoute = (hashValue, { behavior = "smooth" } = {}) => {
 
   window.requestAnimationFrame(() => {
     refreshRevealObservers();
+    syncAllShowcaseStageHeights();
     scrollToRouteTarget(requestedId, route, behavior);
   });
 };
@@ -507,6 +540,14 @@ window.addEventListener("hashchange", () => {
 });
 
 window.addEventListener("scroll", updateHeaderState, { passive: true });
+window.addEventListener("resize", syncAllShowcaseStageHeights);
+window.addEventListener("load", syncAllShowcaseStageHeights);
+
+if ("fonts" in document) {
+  document.fonts.ready.then(() => {
+    syncAllShowcaseStageHeights();
+  });
+}
 
 if (hero && window.matchMedia("(pointer:fine)").matches) {
   hero.addEventListener("pointermove", (event) => {
