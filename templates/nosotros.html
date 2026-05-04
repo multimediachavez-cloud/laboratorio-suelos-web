@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+
+{% block title %}Nosotros - Empresa de Suelos y Pavimentos{% endblock %}
+
+{% block head_extra %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/nosotros.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO NOSOTROS -->
+<section class="nosotros-hero">
+    <div class="nosotros-hero-content">
+        <span>Corporación Puerta Grande E.I.R.L.</span>
+        <h1>Sobre Nosotros</h1>
+        <p>
+            Empresa especializada en estudios de suelos, pavimentos,
+            ensayos de laboratorio y control de calidad para obras civiles.
+        </p>
+    </div>
+</section>
+
+<!-- PRESENTACIÓN -->
+<section class="section nosotros-presentacion">
+
+    <div class="nosotros-texto">
+        <span class="subtitulo">Quiénes somos</span>
+        <h2>Compromiso técnico para obras seguras y eficientes</h2>
+
+        <p>
+            Somos <strong>CORPORACION PUERTA GRANDE E.I.R.L.</strong>, una empresa peruana
+            dedicada a brindar servicios técnicos especializados en el área de construcción,
+            estudios de suelos, pavimentos, ensayos de laboratorio y control de calidad
+            de materiales para proyectos de infraestructura.
+        </p>
+
+        <p>
+            Nuestro trabajo está orientado a ofrecer resultados confiables, oportunos y útiles
+            para la toma de decisiones durante el diseño, ejecución, supervisión y control
+            de obras civiles.
+        </p>
+    </div>
+
+    <div class="nosotros-info">
+        <div><strong>RUC:</strong> 20601519390</div>
+        <div><strong>Razón Social:</strong> CORPORACION PUERTA GRANDE E.I.R.L.</div>
+        <div><strong>Tipo de Empresa:</strong> Empresa Individual de Responsabilidad Limitada</div>
+        <div><strong>Condición:</strong> Activo</div>
+        <div><strong>Inicio de Actividades:</strong> 21 de septiembre de 2016</div>
+        <div><strong>Ubicación:</strong> Chiclayo, Lambayeque - Perú</div>
+    </div>
+
+</section>
+
+<!-- MISIÓN Y VISIÓN -->
+<section class="section mision-vision">
+
+    <div class="mv-card">
+        <i class="fas fa-bullseye"></i>
+        <h2>Misión</h2>
+        <p>
+            Brindar servicios especializados en ensayos de laboratorio, estudios de suelos,
+            pavimentos y control de calidad, aplicando procedimientos técnicos confiables
+            que contribuyan a la seguridad, durabilidad y eficiencia de las obras civiles.
+        </p>
+    </div>
+
+    <div class="mv-card">
+        <i class="fas fa-eye"></i>
+        <h2>Visión</h2>
+        <p>
+            Ser una empresa reconocida a nivel regional y nacional por la calidad de sus
+            servicios técnicos, la precisión de sus resultados y su compromiso con el
+            desarrollo responsable de proyectos de construcción e infraestructura.
+        </p>
+    </div>
+
+</section>
+
+<!-- VALORES -->
+<section class="section valores-section">
+
+    <div class="titulo-centro">
+        <span>Nuestros principios</span>
+        <h2>Valores que guían nuestro trabajo</h2>
+    </div>
+
+    <div class="valores-grid">
+
+        <div class="valor-card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Calidad</h3>
+            <p>Aplicamos procedimientos técnicos para obtener resultados confiables.</p>
+        </div>
+
+        <div class="valor-card">
+            <i class="fas fa-handshake"></i>
+            <h3>Compromiso</h3>
+            <p>Acompañamos cada proyecto con responsabilidad y atención profesional.</p>
+        </div>
+
+        <div class="valor-card">
+            <i class="fas fa-user-check"></i>
+            <h3>Profesionalismo</h3>
+            <p>Trabajamos con personal capacitado y orientado a la excelencia.</p>
+        </div>
+
+        <div class="valor-card">
+            <i class="fas fa-clock"></i>
+            <h3>Puntualidad</h3>
+            <p>Valoramos los tiempos de entrega y la planificación de cada obra.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EXPERIENCIA -->
+<section class="section experiencia-section">
+
+    <div class="experiencia-contenido">
+        <span>Experiencia y respaldo</span>
+        <h2>Soluciones técnicas para proyectos de construcción</h2>
+
+        <p>
+            Contamos con experiencia en ensayos de suelos, concreto, agregados,
+            mezclas asfálticas y control de calidad en obra. Nuestro objetivo es apoyar
+            a empresas, profesionales, instituciones y entidades públicas o privadas
+            en la correcta evaluación de materiales y procesos constructivos.
+        </p>
+
+        <p>
+            La información técnica que proporcionamos permite reducir riesgos,
+            mejorar la calidad de ejecución y fortalecer la seguridad de los proyectos.
+        </p>
+    </div>
+
+</section>
+
+<!-- DIFERENCIALES -->
+<section class="section diferenciales">
+
+    <div class="titulo-centro">
+        <span>Por qué elegirnos</span>
+        <h2>Nuestro diferencial</h2>
+    </div>
+
+    <div class="diferenciales-grid">
+
+        <div class="diferencial-card">
+            <i class="fas fa-flask"></i>
+            <h3>Ensayos especializados</h3>
+            <p>Servicios técnicos orientados al control y evaluación de materiales.</p>
+        </div>
+
+        <div class="diferencial-card">
+            <i class="fas fa-file-alt"></i>
+            <h3>Informes técnicos</h3>
+            <p>Resultados claros, ordenados y útiles para la toma de decisiones.</p>
+        </div>
+
+        <div class="diferencial-card">
+            <i class="fas fa-hard-hat"></i>
+            <h3>Soporte en obra</h3>
+            <p>Atención técnica para proyectos de construcción y pavimentación.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+<section class="nosotros-cta">
+    <div>
+        <h2>¿Deseas conocer más sobre nuestros servicios?</h2>
+        <p>Estamos listos para brindarte soporte técnico especializado.</p>
+    </div>
+
+    <a href="/contacto">Contáctanos</a>
+</section>
+
+{% endblock %}

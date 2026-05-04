@@ -1,0 +1,88 @@
+/* CONTACTO */
+.contacto h1 {
+    font-size: 38px;
+    margin-bottom: 30px;
+    color: #063b46;
+}
+
+.contacto-container {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+/* IZQUIERDA */
+.contacto-info {
+    width: 45%;
+    background: #063b46;
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.contacto-info h2 {
+    margin-bottom: 20px;
+}
+
+.contacto-info p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.contacto-info i {
+    color: #ff4c1e;
+    margin-right: 10px;
+}
+
+/* DERECHA */
+.contacto-form {
+    width: 50%;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.contacto-form h2 {
+    margin-bottom: 20px;
+    color: #063b46;
+}
+
+.contacto-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.contacto-form textarea {
+    height: 120px;
+}
+
+.contacto-form button {
+    background: #ff4c1e;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .contacto-container {
+        flex-direction: column;
+    }
+
+    .contacto-info,
+    .contacto-form {
+        width: 100%;
+    }
+}

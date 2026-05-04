@@ -1,0 +1,343 @@
+/* ===============================
+   SERVICIOS - ESTILO PROFESIONAL
+================================ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* HERO */
+.servicios-hero {
+    height: 340px;
+    background:
+        linear-gradient(rgba(6, 59, 70, 0.78), rgba(6, 59, 70, 0.78)),
+        url('../img/imagen2.jpeg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.servicios-hero-content {
+    max-width: 850px;
+    padding: 0 25px;
+}
+
+.servicios-hero-content span {
+    color: #f7f4f4;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 40px;
+}
+
+.servicios-hero-content h1 {
+    font-size: 30px;
+    margin: 12px 0;
+}
+
+.servicios-hero-content p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* MENÚ DE SERVICIOS */
+.menu-servicios {
+    background: white;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 80;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.menu-servicios a {
+    text-decoration: none;
+    color: #063b46;
+    font-weight: bold;
+    padding: 11px 18px;
+    border-radius: 30px;
+    transition: 0.3s;
+    border: 1px solid rgba(6, 59, 70, 0.15);
+}
+
+.menu-servicios a i {
+    color: #ff4c1e;
+    margin-right: 6px;
+}
+
+.menu-servicios a:hover {
+    background: #ff4c1e;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.menu-servicios a:hover i {
+    color: white;
+}
+
+/* SECCIÓN GENERAL */
+.section {
+    padding: 80px 40px;
+}
+
+.intro-servicios {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+.intro-servicios span,
+.titulo-centro span,
+.servicio-info span {
+    color: #ff4c1e;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.intro-servicios h2,
+.titulo-centro h2 {
+    color: #063b46;
+    font-size: 36px;
+    margin: 12px 0 20px;
+}
+
+.intro-servicios p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #444;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+/* DETALLE DE SERVICIO */
+.servicio-detalle {
+    max-width: 1150px;
+    margin: 45px auto;
+    padding: 45px;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 35px;
+    align-items: center;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.09);
+    border-left: 6px solid #ff4c1e;
+    scroll-margin-top: 115px;
+}
+
+.servicio-alterno {
+    background: linear-gradient(135deg, #063b46, #0c4a57);
+    color: white;
+    border-left: none;
+    border-right: 6px solid #ff4c1e;
+}
+
+.servicio-icono {
+    width: 140px;
+    height: 140px;
+    background: #f5f7f8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.servicio-icono i {
+    font-size: 58px;
+    color: #ff4c1e;
+}
+
+.servicio-alterno .servicio-icono {
+    background: rgba(255,255,255,0.12);
+}
+
+.servicio-info h2 {
+    font-size: 34px;
+    margin: 10px 0 16px;
+    color: #063b46;
+}
+
+.servicio-alterno .servicio-info h2 {
+    color: white;
+}
+
+.servicio-info p {
+    color: #444;
+    font-size: 17px;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 18px;
+}
+
+.servicio-alterno .servicio-info p {
+    color: #e8f4f6;
+}
+
+.servicio-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.servicio-info li {
+    margin-bottom: 11px;
+    padding-left: 28px;
+    position: relative;
+    color: #444;
+    line-height: 1.5;
+}
+
+.servicio-alterno .servicio-info li {
+    color: #f2f2f2;
+}
+
+.servicio-info li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #ff4c1e;
+    font-weight: bold;
+}
+
+/* ENSAYOS */
+.ensayos-section {
+    background: #f5f7f8;
+}
+
+.titulo-centro {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 40px;
+}
+
+.ensayos-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.ensayo-card {
+    background: white;
+    color: #063b46;
+    padding: 22px 18px;
+    border-radius: 16px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+    border-bottom: 4px solid #ff4c1e;
+    transition: 0.3s;
+}
+
+.ensayo-card:hover {
+    background: #063b46;
+    color: white;
+    transform: translateY(-6px);
+}
+
+/* CTA */
+.cta-servicios {
+    margin: 50px 40px 80px;
+    background: linear-gradient(135deg, #063b46, #0c4a57);
+    color: white;
+    padding: 45px;
+    border-radius: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    border-bottom: 6px solid #ff4c1e;
+    box-shadow: 0 14px 35px rgba(0,0,0,0.2);
+}
+
+.cta-servicios h2 {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+.cta-servicios p {
+    color: #e8f4f6;
+}
+
+.cta-servicios a {
+    background: #ff4c1e;
+    color: white;
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.cta-servicios a:hover {
+    background: white;
+    color: #063b46;
+    transform: translateY(-3px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .servicios-hero-content h1 {
+        font-size: 36px;
+    }
+
+    .servicio-detalle {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 35px 25px;
+        margin: 30px 20px;
+    }
+
+    .servicio-icono {
+        margin: auto;
+    }
+
+    .servicio-info p,
+    .intro-servicios p {
+        text-align: justify;
+    }
+
+    .ensayos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-servicios {
+        flex-direction: column;
+        text-align: center;
+        margin: 35px 20px 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    .section {
+        padding: 55px 22px;
+    }
+
+    .menu-servicios {
+        position: static;
+    }
+
+    .intro-servicios h2,
+    .titulo-centro h2,
+    .servicio-info h2,
+    .cta-servicios h2 {
+        font-size: 28px;
+    }
+
+    .ensayos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .servicio-detalle {
+        border-left: 4px solid #ff4c1e;
+    }
+}

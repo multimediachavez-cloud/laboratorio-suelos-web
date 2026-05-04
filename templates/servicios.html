@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+
+{% block title %}Servicios - Empresa de Suelos y Pavimentos{% endblock %}
+
+{% block head_extra %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/servicios.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO SERVICIOS -->
+<section class="servicios-hero">
+    <div class="servicios-hero-content">
+        <span>Servicios especializados</span>
+        <h1>Laboratorio y Control de Calidad</h1>
+        <p>
+            Ensayos de materiales, control de calidad en obra, estudios geotécnicos
+            e implementación de laboratorios para proyectos civiles.
+        </p>
+    </div>
+</section>
+
+<!-- MENÚ DE SERVICIOS -->
+<section class="menu-servicios">
+    <a href="#laboratorio"><i class="fas fa-flask"></i> Laboratorio</a>
+    <a href="#calidad"><i class="fas fa-hard-hat"></i> Control de calidad</a>
+    <a href="#geotecnico"><i class="fas fa-mountain"></i> Geotecnia</a>
+    <a href="#implementacion"><i class="fas fa-vials"></i> Laboratorio en obra</a>
+</section>
+
+<!-- INTRO -->
+<section class="section intro-servicios">
+    <span>Qué ofrecemos</span>
+    <h2>Servicios técnicos para obras civiles</h2>
+
+    <p>
+        En <strong>CORPORACION PUERTA GRANDE E.I.R.L.</strong> brindamos servicios especializados
+        para el análisis, evaluación y control de materiales utilizados en proyectos de construcción,
+        pavimentación e infraestructura.
+    </p>
+
+    <p>
+        Nuestro objetivo es proporcionar resultados confiables que permitan tomar decisiones técnicas
+        adecuadas durante la planificación, ejecución y supervisión de cada obra.
+    </p>
+</section>
+
+<!-- LABORATORIO -->
+<section id="laboratorio" class="servicio-detalle">
+    <div class="servicio-icono">
+        <i class="fas fa-flask"></i>
+    </div>
+
+    <div class="servicio-info">
+        <span>Servicio 01</span>
+        <h2>Laboratorio de Ensayo de Materiales</h2>
+
+        <p>
+            Nuestro laboratorio de ensayo de materiales está especializado en el análisis de suelos,
+            agregados, concreto, mezclas asfálticas, pavimentos y albañilería, trabajando bajo
+            normas técnicas como ASTM, NTP y MTC.
+        </p>
+
+        <ul>
+            <li>Ensayos de suelos, agregados, concreto y mezclas asfálticas.</li>
+            <li>Trabajo técnico basado en normas ASTM, NTP y MTC.</li>
+            <li>Equipo profesional y técnico especializado.</li>
+            <li>Soluciones específicas según las necesidades de cada proyecto.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- CONTROL DE CALIDAD -->
+<section id="calidad" class="servicio-detalle servicio-alterno">
+    <div class="servicio-icono">
+        <i class="fas fa-hard-hat"></i>
+    </div>
+
+    <div class="servicio-info">
+        <span>Servicio 02</span>
+        <h2>Control de Calidad en Obras Civiles</h2>
+
+        <p>
+            Ofrecemos un servicio integral de control de calidad para obras civiles,
+            verificando materiales, procesos constructivos y cumplimiento de especificaciones
+            técnicas durante la ejecución del proyecto.
+        </p>
+
+        <ul>
+            <li>Control técnico integral para proyectos civiles.</li>
+            <li>Verificación de calidad en cada etapa de la obra.</li>
+            <li>Evaluación de compactación, resistencia y comportamiento de materiales.</li>
+            <li>Compromiso con la calidad en cada detalle del proyecto.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ESTUDIOS GEOTÉCNICOS -->
+<section id="geotecnico" class="servicio-detalle">
+    <div class="servicio-icono">
+        <i class="fas fa-mountain"></i>
+    </div>
+
+    <div class="servicio-info">
+        <span>Servicio 03</span>
+        <h2>Estudios Geotécnicos</h2>
+
+        <p>
+            Realizamos análisis especializados del suelo para garantizar la estabilidad,
+            seguridad y adecuada planificación de proyectos de construcción e infraestructura.
+        </p>
+
+        <ul>
+            <li>Estudios de suelo para construcciones confiables.</li>
+            <li>Datos técnicos precisos para diseño y planificación.</li>
+            <li>Evaluación de condiciones del terreno.</li>
+            <li>Asesoría técnica durante las etapas del proyecto.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- IMPLEMENTACIÓN -->
+<section id="implementacion" class="servicio-detalle servicio-alterno">
+    <div class="servicio-icono">
+        <i class="fas fa-vials"></i>
+    </div>
+
+    <div class="servicio-info">
+        <span>Servicio 04</span>
+        <h2>Implementación de Laboratorio en Obra</h2>
+
+        <p>
+            Implementamos laboratorios en obra para asegurar el control de calidad durante
+            todo el proceso constructivo, desde el muestreo hasta la entrega de informes
+            técnicos y documentación de calidad.
+        </p>
+
+        <ul>
+            <li>Ejecución de ensayos, informes técnicos y dossier de calidad.</li>
+            <li>Personal técnico especialista en laboratorio.</li>
+            <li>Equipos de laboratorio adecuados para el control en obra.</li>
+            <li>Gestión documentaria ordenada y alineada a estándares técnicos.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ENSAYOS DESTACADOS -->
+<section class="section ensayos-section">
+    <div class="titulo-centro">
+        <span>Ensayos frecuentes</span>
+        <h2>Principales ensayos que realizamos</h2>
+    </div>
+
+    <div class="ensayos-grid">
+        <div class="ensayo-card">Ensayo Proctor</div>
+        <div class="ensayo-card">CBR</div>
+        <div class="ensayo-card">Granulometría</div>
+        <div class="ensayo-card">Límites de Atterberg</div>
+        <div class="ensayo-card">Densidad in situ</div>
+        <div class="ensayo-card">Compactación</div>
+        <div class="ensayo-card">Resistencia del concreto</div>
+        <div class="ensayo-card">Control de mezclas asfálticas</div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-servicios">
+    <div>
+        <h2>¿Necesitas un servicio técnico?</h2>
+        <p>Solicita una cotización para ensayos, control de calidad o estudios geotécnicos.</p>
+    </div>
+
+    <a href="/contacto">Solicitar cotización</a>
+</section>
+
+{% endblock %}

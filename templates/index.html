@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio - Empresa de Suelos y Pavimentos{% endblock %}
+
+{% block head_extra %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="slider">
+        <div class="slides">
+            <img src="{{ url_for('static', filename='img/imagen1.jpeg') }}" alt="Laboratorio de suelos">
+            <img src="{{ url_for('static', filename='img/imagen2.jpeg') }}" alt="Ensayo de laboratorio">
+            <img src="{{ url_for('static', filename='img/imagen3.jpeg') }}" alt="Control de calidad">
+            <img src="{{ url_for('static', filename='img/imagen4.jpeg') }}" alt="Ensayo de concreto">
+            <img src="{{ url_for('static', filename='img/imagen5.jpeg') }}" alt="Ensayo de asfalto">
+            <img src="{{ url_for('static', filename='img/imagen6.jpeg') }}" alt="Estudio geotécnico">
+            <img src="{{ url_for('static', filename='img/imagen7.jpeg') }}" alt="Pavimentos">
+            <img src="{{ url_for('static', filename='img/imagen8.jpeg') }}" alt="Obra civil">
+            <img src="{{ url_for('static', filename='img/imagen9.jpeg') }}" alt="Laboratorio técnico">
+        </div>
+    </div>
+
+    <div class="hero-info">
+        <span class="hero-etiqueta">Laboratorio especializado</span>
+        <h1>Laboratorio de Suelos y Pavimentos</h1>
+
+        <p>
+            Brindamos servicios especializados en estudios geotécnicos, ensayos de laboratorio,
+            control de calidad de materiales y supervisión técnica para obras civiles.
+        </p>
+
+        <div class="hero-badges">
+            <span><i class="fas fa-check-circle"></i> Suelos</span>
+            <span><i class="fas fa-check-circle"></i> Concreto</span>
+            <span><i class="fas fa-check-circle"></i> Asfalto</span>
+            <span><i class="fas fa-check-circle"></i> Calidad en obra</span>
+        </div>
+
+        <a href="/contacto" class="btn-contacto">Solicitar cotización</a>
+    </div>
+</section>
+
+<section class="section resumen-valor">
+    <div class="valor-card">
+        <i class="fas fa-flask"></i>
+        <h3>Ensayos técnicos</h3>
+        <p>Realizamos pruebas de laboratorio para evaluar materiales usados en construcción y pavimentación.</p>
+    </div>
+
+    <div class="valor-card">
+        <i class="fas fa-hard-hat"></i>
+        <h3>Control de calidad</h3>
+        <p>Verificamos el cumplimiento técnico de materiales y procesos constructivos en obra.</p>
+    </div>
+
+    <div class="valor-card">
+        <i class="fas fa-user-tie"></i>
+        <h3>Personal calificado</h3>
+        <p>Contamos con profesionales y técnicos capacitados para brindar soporte especializado.</p>
+    </div>
+</section>
+
+<section class="section servicios-doble">
+    <div class="servicio-texto">
+        <span class="subtitulo-seccion">Servicios principales</span>
+        <h2>Soluciones técnicas para obras civiles</h2>
+
+        <p>
+            Realizamos ensayos de suelos, rocas, agregados, concreto y mezclas asfálticas,
+            aplicando procedimientos técnicos para garantizar la calidad de cada proyecto.
+        </p>
+
+        <p>
+            Nuestro trabajo permite tomar mejores decisiones durante el diseño, ejecución,
+            control y supervisión de proyectos de infraestructura.
+        </p>
+    </div>
+
+    <div class="servicio-lista">
+        <h2>Ensayos de Laboratorio</h2>
+
+        <ul>
+            <li><i class="fas fa-check-circle"></i> Ensayo Proctor</li>
+            <li><i class="fas fa-check-circle"></i> CBR</li>
+            <li><i class="fas fa-check-circle"></i> Granulometría</li>
+            <li><i class="fas fa-check-circle"></i> Límites de Atterberg</li>
+            <li><i class="fas fa-check-circle"></i> Densidad in situ</li>
+            <li><i class="fas fa-check-circle"></i> Compactación</li>
+        </ul>
+    </div>
+</section>
+
+<section class="section proceso">
+    <div class="titulo-centro">
+        <span>Proceso de trabajo</span>
+        <h2>Metodología clara y ordenada</h2>
+    </div>
+
+    <div class="proceso-grid">
+        <div class="proceso-card">
+            <span>01</span>
+            <h3>Solicitud</h3>
+            <p>Recibimos los requerimientos del cliente y el tipo de ensayo solicitado.</p>
+        </div>
+
+        <div class="proceso-card">
+            <span>02</span>
+            <h3>Muestreo</h3>
+            <p>Se toman o reciben las muestras según las condiciones del proyecto.</p>
+        </div>
+
+        <div class="proceso-card">
+            <span>03</span>
+            <h3>Ensayo</h3>
+            <p>Se realizan las pruebas técnicas correspondientes en laboratorio o campo.</p>
+        </div>
+
+        <div class="proceso-card">
+            <span>04</span>
+            <h3>Informe</h3>
+            <p>Entregamos resultados técnicos claros para la toma de decisiones.</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta-final">
+    <div>
+        <h2>¿Necesitas una cotización?</h2>
+        <p>Comunícate con nosotros para recibir atención técnica especializada.</p>
+    </div>
+
+    <a href="/contacto" class="btn-cta">Contactar ahora</a>
+</section>
+
+{% endblock %}
