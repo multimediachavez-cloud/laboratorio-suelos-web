@@ -29,88 +29,107 @@
     </div>
 
     <!-- NAVBAR -->
-  
     <header class="navbar">
-            <div class="menu-toggle" onclick="toggleMenu()">
-    <i class="fas fa-bars"></i>
-</div>
+
+        <div class="menu-toggle" onclick="toggleMenu(event)">
+            <i class="fas fa-bars"></i>
+        </div>
+
         <div class="logo">
             <img src="{{ url_for('static', filename='img/logo1.png') }}" alt="Logo">
         </div>
 
-        <nav>
-           
-    <a href="/" class="{% if request.path == '/' %}active{% endif %}">Inicio</a>
-    <a href="/nosotros" class="{% if request.path == '/nosotros' %}active{% endif %}">Nosotros</a>
-    <a href="/servicios" class="{% if request.path == '/servicios' %}active{% endif %}">Servicios</a>
-    <a href="/proyectos" class="{% if request.path == '/proyectos' %}active{% endif %}">Proyectos</a>
-    <a href="/contacto" class="{% if request.path == '/contacto' %}active{% endif %}">Contáctanos</a>
-</nav>
+        <nav id="menuNav">
+            <a href="/" class="{% if request.path == '/' %}active{% endif %}">Inicio</a>
+            <a href="/nosotros" class="{% if request.path == '/nosotros' %}active{% endif %}">Nosotros</a>
+            <a href="/servicios" class="{% if request.path == '/servicios' %}active{% endif %}">Servicios</a>
+            <a href="/proyectos" class="{% if request.path == '/proyectos' %}active{% endif %}">Proyectos</a>
+            <a href="/contacto" class="{% if request.path == '/contacto' %}active{% endif %}">Contáctanos</a>
+        </nav>
+
         <button class="btn-intranet">INTRANET</button>
     </header>
 
-    <!-- CONTENIDO DE CADA PÁGINA -->
+    <!-- CONTENIDO -->
     {% block content %}{% endblock %}
 
-   <footer class="footer">
-    <h2>Contacto</h2>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <h2>Contacto</h2>
 
-    <div class="footer-content">
+        <div class="footer-content">
 
-        <div class="item">
-            <i class="fas fa-building"></i>
-            CORPORACION PUERTA GRANDE E.I.R.L.
+            <div class="item">
+                <i class="fas fa-building"></i>
+                CORPORACION PUERTA GRANDE E.I.R.L.
+            </div>
+
+            <div class="item">
+                <i class="fas fa-id-card"></i>
+                RUC: 20601519390
+            </div>
+
+            <div class="item">
+                <i class="fas fa-check-circle"></i>
+                Estado: Activo
+            </div>
+
+            <div class="item">
+                <i class="fas fa-calendar"></i>
+                Inicio: 21/09/2016
+            </div>
+
+            <div class="item">
+                <i class="fas fa-map-marker-alt"></i>
+                Mza. B1 Lote 12 - Chiclayo, Lambayeque
+            </div>
+
+            <div class="item">
+                <i class="fas fa-globe"></i>
+                Perú
+            </div>
+
+            <div class="item">
+                <i class="fas fa-phone"></i>
+                975 457 825 / 920 493 433 / 978 062 723
+            </div>
+
+            <div class="item">
+                <i class="fas fa-envelope"></i>
+                cpgsuelosypavimentos@gmail.com
+            </div>
+
         </div>
-
-        <div class="item">
-            <i class="fas fa-id-card"></i>
-            RUC: 20601519390
-        </div>
-
-        <div class="item">
-            <i class="fas fa-check-circle"></i>
-            Estado: Activo
-        </div>
-
-        <div class="item">
-            <i class="fas fa-calendar"></i>
-            Inicio: 21/09/2016
-        </div>
-
-        
-
-        <div class="item">
-            <i class="fas fa-map-marker-alt"></i>
-            Mza. B1 Lote 12 - Chiclayo, Lambayeque
-        </div>
-
-        <div class="item">
-            <i class="fas fa-globe"></i>
-            Perú
-        </div>
-
-        <div class="item">
-            <i class="fas fa-phone"></i>
-            975 457 825 / 920 493 433 / 978 062 723
-        </div>
-
-        <div class="item">
-            <i class="fas fa-envelope"></i>
-            cpgsuelosypavimentos@gmail.com
-        </div>
-
-    </div>
-</footer>
+    </footer>
 
     <!-- WHATSAPP -->
     <a href="https://wa.me/51975457825" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
-<script>
-function toggleMenu() {
-    const nav = document.querySelector(".navbar nav");
-    nav.classList.toggle("active");
-}
-</script>
+
+    <script>
+        function toggleMenu(event) {
+            event.stopPropagation();
+
+            const nav = document.querySelector(".navbar nav");
+            nav.classList.toggle("active");
+        }
+
+        document.addEventListener("click", function(event) {
+            const nav = document.querySelector(".navbar nav");
+            const toggle = document.querySelector(".menu-toggle");
+
+            if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+                nav.classList.remove("active");
+            }
+        });
+
+        document.querySelectorAll(".navbar nav a").forEach(function(link) {
+            link.addEventListener("click", function() {
+                document.querySelector(".navbar nav").classList.remove("active");
+            });
+        });
+    </script>
+
 </body>
 </html>
