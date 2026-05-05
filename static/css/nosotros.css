@@ -25,6 +25,7 @@
 .nosotros-hero-content h1 {
     font-size: 44px;
     margin: 10px 0;
+    text-align: center;
 }
 
 .nosotros-hero-content p {
@@ -32,6 +33,7 @@
     max-width: 650px;
     margin: 0 auto;
     line-height: 1.7;
+    text-align: justify;
 }
 
 /* SECCIÓN GENERAL */
@@ -84,6 +86,7 @@
 .nosotros-info div {
     margin-bottom: 10px;
     font-size: 15px;
+    text-align: justify;
 }
 
 /* MISIÓN Y VISIÓN */
@@ -116,6 +119,7 @@
 .mv-card h2 {
     margin-bottom: 12px;
     color: #063b46;
+    text-align: center;
 }
 
 .mv-card p {
@@ -140,6 +144,7 @@
     font-size: 36px;
     margin-top: 10px;
     color: #063b46;
+    text-align: center;
 }
 
 /* VALORES */
@@ -171,11 +176,13 @@
 .valor-card h3 {
     color: #063b46;
     margin-bottom: 8px;
+    text-align: center;
 }
 
 .valor-card p {
     color: #555;
     line-height: 1.6;
+    text-align: justify;
 }
 
 /* EXPERIENCIA */
@@ -234,11 +241,13 @@
 .diferencial-card h3 {
     color: #063b46;
     margin-bottom: 8px;
+    text-align: center;
 }
 
 .diferencial-card p {
     color: #555;
     line-height: 1.6;
+    text-align: justify;
 }
 
 /* CTA FINAL */
@@ -261,6 +270,7 @@
 
 .nosotros-cta p {
     color: #e8f4f6;
+    text-align: justify;
 }
 
 .nosotros-cta a {
@@ -302,5 +312,194 @@
 
     .experiencia-section {
         margin: 20px;
+    }
+}
+
+/* =====================================
+   RESPONSIVE PROFESIONAL - NOSOTROS
+===================================== */
+
+@media (max-width: 1200px) {
+    .section {
+        padding: 70px 32px;
+    }
+
+    .valores-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .diferenciales-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nosotros-texto h2,
+    .titulo-centro h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 900px) {
+    .nosotros-hero {
+        height: 280px;
+        padding: 0 24px;
+    }
+
+    .nosotros-hero-content span {
+        font-size: 34px;
+    }
+
+    .nosotros-hero-content h1 {
+        font-size: 34px;
+    }
+
+    .nosotros-hero-content p {
+        font-size: 16px;
+    }
+
+    .nosotros-presentacion,
+    .mision-vision {
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .nosotros-texto,
+    .nosotros-info {
+        width: 100%;
+    }
+
+    .nosotros-info {
+        padding: 24px;
+    }
+
+    .experiencia-section {
+        margin: 25px;
+        padding: 36px 28px;
+    }
+
+    .valores-grid,
+    .diferenciales-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nosotros-cta {
+        margin: 45px 25px;
+        padding: 34px 28px;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .section {
+        padding: 48px 18px;
+    }
+
+    .nosotros-hero {
+        height: 230px;
+        padding: 0 18px;
+    }
+
+    .nosotros-hero-content span {
+        font-size: 25px;
+        line-height: 1.1;
+    }
+
+    .nosotros-hero-content h1 {
+        font-size: 26px;
+    }
+
+    .nosotros-hero-content p {
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: justify;
+    }
+
+    .nosotros-texto .subtitulo,
+    .titulo-centro span,
+    .experiencia-contenido span {
+        font-size: 12px;
+    }
+
+    .nosotros-texto h2,
+    .titulo-centro h2,
+    .experiencia-contenido h2 {
+        font-size: 24px;
+        line-height: 1.25;
+    }
+
+    .nosotros-texto p,
+    .mv-card p,
+    .experiencia-contenido p,
+    .diferencial-card p,
+    .valor-card p,
+    .nosotros-cta p {
+        font-size: 14px;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    .mision-vision {
+        gap: 20px;
+    }
+
+    .mv-card,
+    .valor-card,
+    .diferencial-card {
+        padding: 24px 18px;
+    }
+
+    .valores-grid,
+    .diferenciales-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .experiencia-section {
+        margin: 18px;
+        padding: 28px 20px;
+        border-radius: 18px;
+    }
+
+    .nosotros-cta {
+        margin: 35px 18px;
+        padding: 28px 20px;
+        border-radius: 18px;
+    }
+
+    .nosotros-cta h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .nosotros-cta p {
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: justify;
+    }
+
+    .nosotros-cta a {
+        padding: 12px 22px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 380px) {
+    .nosotros-hero-content span {
+        font-size: 22px;
+    }
+
+    .nosotros-hero-content h1 {
+        font-size: 23px;
+    }
+
+    .nosotros-info div {
+        font-size: 13px;
+        text-align: justify;
+    }
+
+    .mv-card i,
+    .valor-card i,
+    .diferencial-card i {
+        font-size: 30px;
     }
 }

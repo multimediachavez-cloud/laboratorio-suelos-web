@@ -578,3 +578,227 @@
         padding: 30px 24px;
     }
 }
+
+
+
+/* =========================
+   RESPONSIVE EXTRA PRO (CELULAR)
+========================= */
+
+@media (max-width: 768px) {
+
+    /* HERO */
+    .hero {
+        flex-direction: column;
+    }
+
+    .slider {
+        height: 250px;
+    }
+
+    .slides img {
+        width: 100%;
+    }
+
+    .hero-info {
+        width: 100%;
+        padding: 35px 20px;
+        border-radius: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-info h1 {
+        font-size: 26px;
+    }
+
+    .hero-info p {
+        font-size: 14px;
+        text-align: justify;
+    }
+
+    .hero-badges {
+        justify-content: center;
+    }
+
+    /* TARJETAS */
+    .valor-card {
+        padding: 22px 16px;
+    }
+
+    .valor-card i {
+        font-size: 28px;
+    }
+
+    .valor-card p {
+        text-align: justify;
+    }
+
+    /* LINEAS DE ENSAYO */
+    .lineas-ensayo {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .lineas-texto h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .lineas-texto p {
+        text-align: justify;
+        font-size: 14px;
+    }
+
+    .lineas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .linea-card {
+        padding: 20px 12px;
+    }
+
+    .linea-card i {
+        font-size: 26px;
+    }
+
+    .linea-card p {
+        font-size: 13px;
+        text-align: justify;
+    }
+
+    /* SERVICIOS */
+    .servicio-texto p {
+        font-size: 14px;
+        text-align: justify;
+    }
+
+    .servicio-lista {
+        padding: 25px;
+    }
+
+    .servicio-lista li {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    /* 🔥 PROCESO CORREGIDO */
+    .proceso-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .proceso-card {
+        padding: 20px 14px;
+    }
+
+    .proceso-card span {
+        font-size: 26px;
+    }
+
+    .proceso-card h3 {
+        font-size: 15px;
+    }
+
+    .proceso-card p {
+        font-size: 13px;
+        line-height: 1.5;
+        text-align: justify; /* 🔥 CORRECCIÓN */
+    }
+
+    /* PROYECTOS */
+    .proyectos-imagen img {
+        height: 250px;
+    }
+
+    .proyectos-texto p {
+        font-size: 14px;
+        text-align: justify;
+    }
+
+    /* 🔥 ENSAYOS */
+    .ensayos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .ensayo-card {
+        padding: 16px 12px;
+        font-size: 13px;
+    }
+
+    /* RESPALDO */
+    .respaldo-contenido {
+        padding: 28px 20px;
+    }
+
+    .respaldo-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .respaldo-items div {
+        padding: 20px;
+    }
+
+    /* CTA FINAL */
+    .cta-final {
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .cta-final h2 {
+        font-size: 26px;
+    }
+
+    .cta-final p {
+        font-size: 14px;
+        text-align: justify;
+    }
+
+    .btn-cta {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+}
+
+/* 📱 CELULARES PEQUEÑOS */
+@media (max-width: 480px) {
+
+    .hero-info h1 {
+        font-size: 22px;
+    }
+
+    .hero-info p {
+        font-size: 13px;
+    }
+
+    .lineas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .respaldo-items {
+        grid-template-columns: 1fr;
+    }
+
+    /* 🔻 PROCESO */
+    .proceso-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 🔻 ENSAYOS */
+    .ensayos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .valor-card {
+        padding: 18px 14px;
+    }
+
+    .valor-card p {
+        font-size: 13px;
+    }
+
+    .proyectos-imagen img {
+        height: 200px;
+    }
+}
