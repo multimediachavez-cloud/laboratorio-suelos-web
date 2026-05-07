@@ -31,6 +31,16 @@ body {
     margin-right: 6px;
 }
 
+.top-left a {
+    color: inherit;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.top-right a {
+    display: inline-flex;
+}
+
 .top-right img {
     width: 32px;
     height: 32px;
@@ -133,6 +143,12 @@ body {
     color: #ff4c1e;
     margin-right: 6px;
     min-width: 14px;
+}
+
+.footer-content a {
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 /* WHATSAPP */

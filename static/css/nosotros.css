@@ -92,40 +92,70 @@
 /* MISIÓN Y VISIÓN */
 .mision-vision {
     display: flex;
-    gap: 40px;
+    gap: 35px;
+    margin-top: 50px;
 }
 
-.mv-card {
-    background: white;
-    padding: 40px 30px;
-    border-radius: 20px;
+.mv-card{
+    background: linear-gradient(145deg, #ffffff, #f7f9fa);
+    padding: 40px 35px;
+    border-radius: 22px;
     text-align: center;
-    box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
     flex: 1;
     border-top: 5px solid #ff4c1e;
-    transition: 0.3s;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.mv-card:hover {
-    transform: translateY(-6px);
+.mv-card::before{
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 140px;
+    height: 140px;
+    background: rgba(255,76,30,0.08);
+    border-radius: 50%;
 }
 
-.mv-card i {
-    font-size: 42px;
+.mv-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+.mv-card i{
+    font-size: 48px;
     color: #ff4c1e;
-    margin-bottom: 10px;
+    margin-bottom: 18px;
 }
 
-.mv-card h2 {
-    margin-bottom: 12px;
+.mv-card h2{
     color: #063b46;
     text-align: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
 }
 
-.mv-card p {
-    color: #555;
-    line-height: 1.7;
+.mv-card h2::after{
+    content: "";
+    width: 70%;
+    height: 4px;
+    background: #ff4c1e;
+    position: absolute;
+    left: 15%;
+    bottom: -10px;
+    border-radius: 10px;
+}
+
+.mv-card p{
     text-align: justify;
+    line-height: 1.9;
+    font-size: 15px;
+    color: #444;
 }
 
 /* TÍTULOS CENTRADOS */

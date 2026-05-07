@@ -34,6 +34,12 @@
     margin-right: 10px;
 }
 
+.contacto-info a {
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 /* DERECHA */
 .contacto-form {
     width: 50%;

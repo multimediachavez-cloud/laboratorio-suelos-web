@@ -343,7 +343,6 @@ html {
 }
 
 
-
 /* =====================================
    RESPONSIVE PROFESIONAL - SERVICIOS
 ===================================== */
@@ -443,16 +442,16 @@ html {
 /* CELULAR */
 @media (max-width: 600px) {
     .section {
-        padding: 48px 18px;
+        padding: 45px 18px;
     }
 
     .servicios-hero {
-        height: 245px;
-        padding: 0 18px;
+        height: 260px;
+        padding: 20px;
     }
 
     .servicios-hero-content span {
-        font-size: 25px;
+        font-size: 22px;
     }
 
     .servicios-hero-content h1 {
@@ -460,19 +459,22 @@ html {
     }
 
     .servicios-hero-content p {
-        font-size: 14px;
+        font-size: 15px;
         text-align: justify;
     }
 
     .menu-servicios {
-        padding: 12px 10px;
-        justify-content: flex-start;
-        gap: 8px;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 15px;
     }
 
     .menu-servicios a {
-        font-size: 12px;
-        padding: 8px 12px;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
     }
 
     .intro-servicios h2,
@@ -486,54 +488,65 @@ html {
     .servicio-info p,
     .servicio-info li,
     .cta-servicios p {
-        font-size: 14px;
+        font-size: 15px;
         text-align: justify;
     }
 
     .servicio-detalle {
         margin: 24px 14px;
-        padding: 26px 18px;
+        padding: 25px 18px;
+        gap: 20px;
         border-left: 4px solid #ff4c1e;
     }
 
     .servicio-icono {
-        width: 95px;
-        height: 95px;
+        width: 90px;
+        height: 90px;
     }
 
     .servicio-icono i {
-        font-size: 38px;
+        font-size: 40px;
     }
 
-    /* 🔥 CORRECCIÓN IMPORTANTE */
     .ensayos-grid {
-        grid-template-columns: repeat(2, 1fr); /* ✅ 2 columnas */
+        grid-template-columns: repeat(2, 1fr);
         gap: 12px;
     }
 
     .ensayo-card {
-        padding: 16px 12px;
-        font-size: 13px;
+        padding: 18px;
+        font-size: 14px;
     }
 
     .cta-servicios {
         margin: 30px 16px 50px;
-        padding: 28px 20px;
+        padding: 25px 18px;
+        gap: 15px;
         align-items: flex-start;
         text-align: left;
     }
 
+    .cta-servicios h2 {
+        font-size: 22px;
+    }
+
+    .cta-servicios p {
+        font-size: 14px;
+    }
+
     .cta-servicios a {
-        padding: 12px 22px;
-        font-size: 13px;
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        font-size: 14px;
     }
 }
 
-/* CELULAR MUY PEQUEÑO */
+/* CELULAR MUY PEQUENO */
 @media (max-width: 380px) {
 
     .ensayos-grid {
-        grid-template-columns: 1fr; /* 🔻 solo aquí baja a 1 */
+        grid-template-columns: 1fr;
     }
 
     .servicios-hero-content h1 {
